@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431B8C491DF70B1F00C127AC /* QuestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431B8C481DF70B1F00C127AC /* QuestionsModel.m */; };
+		431B8C581DF7441500C127AC /* CustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 431B8C571DF7441500C127AC /* CustomViewCell.m */; };
 		4386D7C51DF5E5D500F32137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7C41DF5E5D500F32137 /* main.m */; };
 		4386D7C81DF5E5D500F32137 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7C71DF5E5D500F32137 /* AppDelegate.m */; };
 		4386D7CB1DF5E5D500F32137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7CA1DF5E5D500F32137 /* ViewController.m */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431B8C471DF70B1F00C127AC /* QuestionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsModel.h; sourceTree = "<group>"; };
+		431B8C481DF70B1F00C127AC /* QuestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsModel.m; sourceTree = "<group>"; };
+		431B8C561DF7441500C127AC /* CustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewCell.h; sourceTree = "<group>"; };
+		431B8C571DF7441500C127AC /* CustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewCell.m; sourceTree = "<group>"; };
 		4386D7C01DF5E5D500F32137 /* A Touch of Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Touch of Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4386D7C41DF5E5D500F32137 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4386D7C61DF5E5D500F32137 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431B8C451DF7095E00C127AC /* models */ = {
+			isa = PBXGroup;
+			children = (
+				431B8C471DF70B1F00C127AC /* QuestionsModel.h */,
+				431B8C481DF70B1F00C127AC /* QuestionsModel.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		4386D7B71DF5E5D500F32137 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +76,7 @@
 		4386D7C21DF5E5D500F32137 /* A Touch of Health */ = {
 			isa = PBXGroup;
 			children = (
+				431B8C451DF7095E00C127AC /* models */,
 				4386D7C61DF5E5D500F32137 /* AppDelegate.h */,
 				4386D7C71DF5E5D500F32137 /* AppDelegate.m */,
 				4386D7C91DF5E5D500F32137 /* ViewController.h */,
@@ -72,6 +88,8 @@
 				4386D7C31DF5E5D500F32137 /* Supporting Files */,
 				4386D7E61DF5EC7900F32137 /* QuestionsViewController.h */,
 				4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */,
+				431B8C561DF7441500C127AC /* CustomViewCell.h */,
+				431B8C571DF7441500C127AC /* CustomViewCell.m */,
 			);
 			path = "A Touch of Health";
 			sourceTree = "<group>";
@@ -158,6 +176,8 @@
 			files = (
 				4386D7CB1DF5E5D500F32137 /* ViewController.m in Sources */,
 				4386D7C81DF5E5D500F32137 /* AppDelegate.m in Sources */,
+				431B8C491DF70B1F00C127AC /* QuestionsModel.m in Sources */,
+				431B8C581DF7441500C127AC /* CustomViewCell.m in Sources */,
 				4386D7E81DF5EC7900F32137 /* QuestionsViewController.m in Sources */,
 				4386D7C51DF5E5D500F32137 /* main.m in Sources */,
 			);
@@ -316,6 +336,7 @@
 				4386D7D91DF5E5D500F32137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionsViewController : UIViewController
+#import "QuestionsModel.h"
 
+@interface QuestionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+    @property (strong, nonatomic) QuestionsModel* model;
+
+    @property (weak, nonatomic) IBOutlet UIBarButtonItem *header_icon_button;
+    @property (weak, nonatomic) IBOutlet UIBarButtonItem *back_button;
+    @property (weak, nonatomic) IBOutlet UILabel *label_msg;
+    @property (weak, nonatomic) IBOutlet UIImageView *label_image;
+    @property (weak, nonatomic) IBOutlet UITableView *table_view;
+    @property (weak, nonatomic) IBOutlet UIButton *save_button;
+    @property (weak, nonatomic) IBOutlet UIButton *clear_button;
+    @property (weak, nonatomic) IBOutlet UIButton *my_scores_button;
+    @property (weak, nonatomic) IBOutlet UIButton *privacy_policy_button;
 @end
