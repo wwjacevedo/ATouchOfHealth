@@ -22,6 +22,11 @@
     [_model initQuestionsAndAnswers];
     _table_view.delegate = self;
     _table_view.dataSource = self;
+    
+    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
+//    self.navigationItem.hidesBackButton = YES;
+//    self.navigationItem.leftBarButtonItem = self.back_button;
     // Do any additional setup after loading the view.
 }
 
@@ -111,14 +116,14 @@
     }
     
     if ([table_view_cell.noButton isEnabled]) {
-        [table_view_cell.noButton setBackgroundColor:([table_view_cell.yesButton backgroundColor])];
+        [table_view_cell.noButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
         [table_view_cell.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected & UIControlStateNormal];
         
         [table_view_cell.yesButton setBackgroundColor:[UIColor whiteColor]];
         [table_view_cell.yesButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected & UIControlStateNormal];
         
     } else {
-        [table_view_cell.yesButton setBackgroundColor:([table_view_cell.noButton backgroundColor])];
+        [table_view_cell.yesButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
         [table_view_cell.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected & UIControlStateNormal];
         
         [table_view_cell.noButton setBackgroundColor:[UIColor whiteColor]];
@@ -128,6 +133,11 @@
     return table_view_cell;
 }
 
+//Header back button action
+-(void)back {
+    // back button code
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 /*
 #pragma mark - Navigation
