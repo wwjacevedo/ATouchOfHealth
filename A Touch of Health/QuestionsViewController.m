@@ -23,11 +23,7 @@
     _table_view.delegate = self;
     _table_view.dataSource = self;
     
-    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    
-//    self.navigationItem.hidesBackButton = YES;
-//    self.navigationItem.leftBarButtonItem = self.back_button;
-    // Do any additional setup after loading the view.
+//    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
 }
 
 
@@ -37,17 +33,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:  (NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
     return 5;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *) tableView {
     return 3;
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:   (NSInteger)section
-{
+
+- (NSString *)tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section {
     switch (section) {
         case 1:
             return @"Exercise & Nutrition";
@@ -66,9 +60,14 @@
             break;
     }
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:  (NSIndexPath *)indexPath
-{
+
+- (UITableViewCell *)tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath{
     CustomViewCell *table_view_cell = [tableView dequeueReusableCellWithIdentifier:@"table_view_cell" forIndexPath:indexPath];
+    
+    [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
+    table_view_cell.yesButton.tag = indexPath.row;
     
     if (indexPath.row < 5) {
         [table_view_cell.question setText:[_model.exerciseQuestions objectAtIndex:indexPath.row]];
@@ -115,7 +114,7 @@
         }
     }
     
-    if ([table_view_cell.noButton isEnabled]) {
+    if ([self.model.answers objectAtIndex:indexPath.row]) {
         [table_view_cell.noButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
         [table_view_cell.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected & UIControlStateNormal];
         
@@ -133,8 +132,22 @@
     return table_view_cell;
 }
 
+- (void) yesButtonTapped:(UIButton *) button {
+    
+    NSInteger index = button.tag;
+
+    if (button.isEnabled) {
+        [self.model.answers replaceObjectAtIndex:index withObject:@YES];
+        [self.table_view beginUpdates];
+        [self.table_view endUpdates];
+
+    } else {
+        [self.model.answers replaceObjectAtIndex:index withObject:@NO];
+    }
+}
+
 //Header back button action
--(void)back {
+-(void) back {
     // back button code
     [self.navigationController popViewControllerAnimated:YES];
 }

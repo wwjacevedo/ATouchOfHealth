@@ -19,8 +19,9 @@
 @property (strong, nonatomic) NSMutableArray* mindBodyAnswers;
 @property (strong, nonatomic) NSMutableArray* moreAnswers;
 
-
+@property (strong, nonatomic) NSMutableArray* answers;
 
 - (void) initQuestionsAndAnswers;
+- (void) yesButtonTapped;
 
 @end

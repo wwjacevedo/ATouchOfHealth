@@ -40,6 +40,12 @@
     self.medsAnswers        = [[NSMutableArray alloc] initWithArray:(@[@NO, @NO, @NO, @NO, @NO])];
     self.mindBodyAnswers    = [[NSMutableArray alloc] initWithArray:(@[@NO, @NO, @NO, @NO, @NO])];
     self.moreAnswers        = [[NSMutableArray alloc] initWithArray:(@[@NO, @NO, @NO, @NO, @NO])];
+    
+    self.answers = [[NSMutableArray alloc] initWithArray:@[@NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO]];
+}
+
+- (void) yesButtonTapped {
+    NSLog(@"Testing");
 }
 
 @end
