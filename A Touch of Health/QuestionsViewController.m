@@ -86,6 +86,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath{
     
+    [self manageHeaderImageAndMsg:indexPath];
+    
     CustomViewCell *table_view_cell = [tableView dequeueReusableCellWithIdentifier:@"table_view_cell" forIndexPath:indexPath];
     
     if (indexPath != nil) {
@@ -159,11 +161,28 @@
 
 - (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath {
     
-    NSInteger *index = indexPath.row;
+    NSInteger index = (NSInteger) indexPath.row;
     
-    if (index < (NSInteger) 5) {
+    
+    self.label_image.contentMode = UIViewContentModeScaleAspectFit;
+    
+    if (index < 5) {
+        [self.label_msg setText:@"Exercise & Nutritioin"];
+        [self.label_image setImage:[UIImage imageNamed:@"exercise.png"]];
+        self.label_image.contentMode = UIViewContentModeScaleToFill;
         
-    } else if (index > 4 && index < 10)
+    } else if (index > 4 && index < 10) {
+        [self.label_msg setText:@"Meds for Health"];
+        [self.label_image setImage:[UIImage imageNamed:@"meds_health.png"]];
+        
+    } else if (index > 10 && index < 15) {
+        [self.label_msg setText:@"Mind and Body"];
+        [self.label_image setImage:[UIImage imageNamed:@"mind_body.png"]];
+        
+    } else {
+        [self.label_msg setText:@"More on My Health"];
+        [self.label_image setImage:[UIImage imageNamed:@"more_health.png"]];
+    }
     
     
 }
