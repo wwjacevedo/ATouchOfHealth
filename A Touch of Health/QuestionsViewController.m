@@ -86,9 +86,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath{
     
-    [self manageHeaderImageAndMsg:indexPath];
+    [self manageHeaderImageAndMsgRespectTo:indexPath];
     
     CustomViewCell *table_view_cell = [tableView dequeueReusableCellWithIdentifier:@"table_view_cell" forIndexPath:indexPath];
+    
+    [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
+    table_view_cell.yesButton.tag = indexPath.row;
+    
+    [table_view_cell.noButton addTarget:self action:@selector(noButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [table_view_cell.noButton setShowsTouchWhenHighlighted:@YES];
+    table_view_cell.noButton.tag = indexPath.row;
     
     if (indexPath != nil) {
         [table_view_cell.question setText:[_model.allQuestions objectAtIndex:indexPath.row]];
@@ -101,17 +109,6 @@
             [table_view_cell.noButton setEnabled:@YES];
         }
     }
-    
-    [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
-    table_view_cell.yesButton.tag = indexPath.row;
-    
-    [table_view_cell.noButton addTarget:self action:@selector(noButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [table_view_cell.noButton setShowsTouchWhenHighlighted:@YES];
-    table_view_cell.noButton.tag = indexPath.row;
-
-    
-        
     
     if ([[self.model.answers objectAtIndex:indexPath.row]  isEqual: @NO]) {
         [table_view_cell.noButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
@@ -159,7 +156,7 @@
     }
 }
 
-- (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath {
+- (void) manageHeaderImageAndMsgRespectTo :(NSIndexPath *) indexPath {
     
     NSInteger index = (NSInteger) indexPath.row;
     
