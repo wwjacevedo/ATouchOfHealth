@@ -23,6 +23,13 @@
     _table_view.delegate = self;
     _table_view.dataSource = self;
     
+    if (_moreQuestions) {
+        _numOfQuestions = 20;
+    } else {
+        _numOfQuestions = 15;
+    }
+
+    
 //    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
 }
 
@@ -34,35 +41,62 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
-    return 5;
+    return _numOfQuestions;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *) tableView {
-    return 3;
+    return 1;
 }
 
-- (NSString *)tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section {
-    switch (section) {
-        case 1:
-            return @"Exercise & Nutrition";
-            break;
-        case 2:
-            return @"Meds for Health";
-            break;
-        case 3:
-            return @"Mind and Body";
-            break;
-        case 4:
-            return @"More on My Health";
-            break;
-        default:
-            return @"";
-            break;
+//- (NSString *)tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section {
+//    switch (section) {
+//        case 1:
+//            return @"Exercise & Nutrition";
+//            break;
+//        case 2:
+//            return @"Meds for Health";
+//            break;
+//        case 3:
+//            return @"Mind and Body";
+//            break;
+//        case 4:
+//            return @"More on My Health";
+//            break;
+//        default:
+//            return @"";
+//            break;
+//    }
+//}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat height = scrollView.frame.size.height;
+    
+    CGFloat contentYoffset = scrollView.contentOffset.y;
+    
+    CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
+    
+    if(distanceFromBottom < height)
+    {
+        NSLog(@"end of the table");
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath{
+    
     CustomViewCell *table_view_cell = [tableView dequeueReusableCellWithIdentifier:@"table_view_cell" forIndexPath:indexPath];
+    
+    if (indexPath != nil) {
+        [table_view_cell.question setText:[_model.allQuestions objectAtIndex:indexPath.row]];
+        
+        if ([[_model.answers objectAtIndex:indexPath.row] isEqual: @YES]) {
+            [table_view_cell.yesButton setEnabled:@YES];
+            [table_view_cell.noButton setEnabled:@NO];
+        } else {
+            [table_view_cell.yesButton setEnabled:@NO];
+            [table_view_cell.noButton setEnabled:@YES];
+        }
+    }
     
     [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
@@ -71,51 +105,9 @@
     [table_view_cell.noButton addTarget:self action:@selector(noButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.noButton setShowsTouchWhenHighlighted:@YES];
     table_view_cell.noButton.tag = indexPath.row;
+
     
-    if (indexPath.row < 5) {
-        [table_view_cell.question setText:[_model.exerciseQuestions objectAtIndex:indexPath.row]];
         
-        if ([_model.exerciseAnswers objectAtIndex:indexPath.row]) {
-            [table_view_cell.yesButton setEnabled:@YES];
-            [table_view_cell.noButton setEnabled:@NO];
-        } else {
-            [table_view_cell.yesButton setEnabled:@NO];
-            [table_view_cell.noButton setEnabled:@YES];
-        }
-        
-    } else if (indexPath.row > 4 && indexPath.row < 10) {
-        [table_view_cell.question setText:[_model.medsQuestions objectAtIndex:indexPath.row - 5]];
-        
-        if ([_model.medsAnswers objectAtIndex:indexPath.row - 5]) {
-            [table_view_cell.yesButton setEnabled:@YES];
-            [table_view_cell.noButton setEnabled:@NO];
-        } else {
-            [table_view_cell.yesButton setEnabled:@NO];
-            [table_view_cell.noButton setEnabled:@YES];
-        }
-        
-    } else if (indexPath.row > 9 && indexPath.row < 15) {
-        [table_view_cell.question setText:[_model.mindBodyQuestions objectAtIndex:indexPath.row - 10]];
-        
-        if ([_model.mindBodyAnswers objectAtIndex:indexPath.row - 10]) {
-            [table_view_cell.yesButton setEnabled:@YES];
-            [table_view_cell.noButton setEnabled:@NO];
-        } else {
-            [table_view_cell.yesButton setEnabled:@NO];
-            [table_view_cell.noButton setEnabled:@YES];
-        }
-        
-    } else {
-        [table_view_cell.question setText:[_model.moreQuestions objectAtIndex:indexPath.row - 15]];
-        
-        if ([_model.moreAnswers objectAtIndex:indexPath.row - 15]) {
-            [table_view_cell.yesButton setEnabled:@YES];
-            [table_view_cell.noButton setEnabled:@NO];
-        } else {
-            [table_view_cell.yesButton setEnabled:@NO];
-            [table_view_cell.noButton setEnabled:@YES];
-        }
-    }
     
     if ([[self.model.answers objectAtIndex:indexPath.row]  isEqual: @NO]) {
         [table_view_cell.noButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];

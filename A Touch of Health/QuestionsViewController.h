@@ -24,5 +24,8 @@
     @property (weak, nonatomic) IBOutlet UIButton *my_scores_button;
     @property (weak, nonatomic) IBOutlet UIButton *privacy_policy_button;
 
+    @property Boolean moreQuestions;
+    @property NSInteger numOfQuestions;
+
 - (void) yesButtonTapped:(UIButton *) sender;
 @end
