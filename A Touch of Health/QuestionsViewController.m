@@ -28,6 +28,8 @@
     } else {
         _numOfQuestions = 15;
     }
+    
+//    _back_button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(back:)];
 
     
 //    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
@@ -155,9 +157,19 @@
     }
 }
 
+- (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath {
+    
+    NSInteger *index = indexPath.row;
+    
+    if (index < (NSInteger) 5) {
+        
+    } else if (index > 4 && index < 10)
+    
+    
+}
+
 //Header back button action
--(void) back {
-    // back button code
+- (void) back:(UIBarButtonItem *) button {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

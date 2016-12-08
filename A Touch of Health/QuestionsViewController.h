@@ -28,4 +28,6 @@
     @property NSInteger numOfQuestions;
 
 - (void) yesButtonTapped:(UIButton *) sender;
+- (void) noButtonTapped:(UIButton *) sender;
+- (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath ;
 @end
