@@ -22,5 +22,5 @@
 @property (strong, nonatomic) NSMutableArray* answers;
 
 - (void) initQuestionsAndAnswers;
-
+- (void) initAnswers;
 @end

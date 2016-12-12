@@ -398,7 +398,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="back_button" destination="LXN-Cy-d0N" id="EoP-6I-NQy"/>
                         <outlet property="clear_button" destination="wRo-2x-oWX" id="ho8-9j-V4F"/>
+                        <outlet property="contact_us_button" destination="ga2-3O-msg" id="GgG-if-qG8"/>
                         <outlet property="label_image" destination="90k-6Q-8mK" id="fTG-Wp-Z2V"/>
                         <outlet property="label_msg" destination="SWU-NO-IG2" id="qxn-tb-fzo"/>
                         <outlet property="my_scores_button" destination="XEf-1A-VN9" id="Hnp-IE-CiI"/>

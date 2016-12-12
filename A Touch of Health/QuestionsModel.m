@@ -51,8 +51,16 @@
 //                           @"A positive person?",
 //                           @"Able to reflect on your greatest accomplishment?"];
     
+    self.initAnswers;
     
-    self.answers = [[NSMutableArray alloc] initWithArray:@[@NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO]];
+}
+
+- (void) initAnswers {
+    self.answers = [[NSMutableArray alloc] init];
+    
+    for (int index = 0; index < 20; index++) {
+        [self.answers addObject:@"0"];
+    }
 }
 
 @end

@@ -12,20 +12,25 @@
 
 @interface QuestionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-    @property (strong, nonatomic) QuestionsModel* model;
+@property (strong, nonatomic) QuestionsModel* model;
 
-    @property (weak, nonatomic) IBOutlet UIBarButtonItem *header_icon_button;
-    @property (strong, nonatomic) IBOutlet UIBarButtonItem *back_button;
-    @property (weak, nonatomic) IBOutlet UILabel *label_msg;
-    @property (weak, nonatomic) IBOutlet UIImageView *label_image;
-    @property (weak, nonatomic) IBOutlet UITableView *table_view;
-    @property (weak, nonatomic) IBOutlet UIButton *save_button;
-    @property (weak, nonatomic) IBOutlet UIButton *clear_button;
-    @property (weak, nonatomic) IBOutlet UIButton *my_scores_button;
-    @property (weak, nonatomic) IBOutlet UIButton *privacy_policy_button;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *header_icon_button;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *back_button;
+@property (weak, nonatomic) IBOutlet UILabel *label_msg;
+@property (weak, nonatomic) IBOutlet UIImageView *label_image;
+@property (weak, nonatomic) IBOutlet UITableView *table_view;
+@property (weak, nonatomic) IBOutlet UIButton *save_button;
+@property (weak, nonatomic) IBOutlet UIButton *contact_us_button;
+@property (weak, nonatomic) IBOutlet UIButton *clear_button;
+@property (weak, nonatomic) IBOutlet UIButton *my_scores_button;
+@property (weak, nonatomic) IBOutlet UIButton *privacy_policy_button;
 
-    @property Boolean moreQuestions;
-    @property NSInteger numOfQuestions;
+@property Boolean moreQuestions;
+@property NSInteger numOfQuestions;
+
+- (void) manageHeaderImageAndMsgRespectTo :(NSIndexPath *) indexPath;
+
+- (void) back;
 
 - (void) yesButtonTapped:(UIButton *) sender;
 - (void) noButtonTapped:(UIButton *) sender;
@@ -33,4 +38,7 @@
 
 - (void) readAnswersSaved;
 - (BOOL) checkForAnswers;
+
+-(void)launchMailAppOnDevice;
+-(void)sendEmail;
 @end

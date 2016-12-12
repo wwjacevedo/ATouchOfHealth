@@ -19,13 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (self.checkForAnswers) {
-        NSLog(@"ANSWERS : YES");
-        self.readAnswersSaved;
-    } else {
-        NSLog(@"NO ANSWERS");
-    }
-    
     _model = [[QuestionsModel alloc] init];
     [_model initQuestionsAndAnswers];
     _table_view.delegate = self;
@@ -37,13 +30,20 @@
         _numOfQuestions = 15;
     }
     
-//    _back_button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(back:)];
-        [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
+    if (self.checkForAnswers) {
+        NSLog(@"ANSWERS : YES");
+        [self readAnswersSaved];
+    } else {
+        NSLog(@"NO ANSWERS");
+    }
     
-//    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+//    _back_button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(back)];
+    [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
+    [self.clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
+    [self.contact_us_button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.back_button = [[UIBarButtonItem alloc]initWithTitle:@"Yeah" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -109,7 +109,7 @@
     if (indexPath != nil) {
         [table_view_cell.question setText:[_model.allQuestions objectAtIndex:indexPath.row]];
         
-        if ([[_model.answers objectAtIndex:indexPath.row] isEqual :@YES]) {
+        if ([[self.model.answers objectAtIndex:indexPath.row] isEqualToString:@"1"]) {
             [table_view_cell.yesButton setEnabled:@YES];
             [table_view_cell.noButton setEnabled:@NO];
         } else {
@@ -118,19 +118,19 @@
         }
     }
     
-    if ([[self.model.answers objectAtIndex:indexPath.row]  isEqual: @NO]) {
-        [table_view_cell.noButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
-        [table_view_cell.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected & UIControlStateNormal];
-        
-        [table_view_cell.yesButton setBackgroundColor:[UIColor whiteColor]];
-        [table_view_cell.yesButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected & UIControlStateNormal];
-        
-    } else {
+    if ([[self.model.answers objectAtIndex:indexPath.row] isEqualToString:@"1"]) {
         [table_view_cell.yesButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
         [table_view_cell.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected & UIControlStateNormal];
         
         [table_view_cell.noButton setBackgroundColor:[UIColor whiteColor]];
         [table_view_cell.noButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected & UIControlStateNormal];
+
+    } else {
+        [table_view_cell.noButton setBackgroundColor:[UIColor colorWithRed:0.63 green:0.60 blue:0.87 alpha:1.0]];
+        [table_view_cell.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected & UIControlStateNormal];
+        
+        [table_view_cell.yesButton setBackgroundColor:[UIColor whiteColor]];
+        [table_view_cell.yesButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected & UIControlStateNormal];
     }
     
     return table_view_cell;
@@ -141,11 +141,11 @@
     NSInteger index = button.tag;
 
     if (button.isEnabled) {
-        [self.model.answers replaceObjectAtIndex:index withObject:@YES];
+        [self.model.answers replaceObjectAtIndex:index withObject:@"1"];
         [self.table_view reloadData];
 
     } else {
-        [self.model.answers replaceObjectAtIndex:index withObject:@NO];
+        [self.model.answers replaceObjectAtIndex:index withObject:@"0"];
         [self.table_view reloadData];
     }
 }
@@ -155,11 +155,11 @@
     NSInteger index = button.tag;
     
     if (button.isEnabled) {
-        [self.model.answers replaceObjectAtIndex:index withObject:@NO];
+        [self.model.answers replaceObjectAtIndex:index withObject:@"0"];
         [self.table_view reloadData];
         
     } else {
-        [self.model.answers replaceObjectAtIndex:index withObject:@YES];
+        [self.model.answers replaceObjectAtIndex:index withObject:@"1"];
         [self.table_view reloadData];
     }
 }
@@ -193,7 +193,8 @@
 }
 
 //Header back button action
-- (void) back:(UIBarButtonItem *) button {
+- (void) back {
+    NSLog(@"Back button");
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -220,9 +221,9 @@
         NSString *tempString = [fileContent substringWithRange:NSMakeRange(index, 1)];
         
         if ([tempString isEqualToString:@"1"]) {
-            [self.model.answers addObject:@YES];
+            [self.model.answers replaceObjectAtIndex:index withObject:@"1"];
         } else {
-            [self.model.answers addObject:@NO];
+            [self.model.answers replaceObjectAtIndex:index withObject:@"0"];
         }
     }
     
@@ -245,6 +246,29 @@
     
     return NO;
 }
+
+- (void) clearAnswers {
+    [self.model initAnswers];
+    [self saveQuestionsState];
+    [self.table_view reloadData];
+    NSLog(@"Answers cleard");
+}
+
+- (void) launchMailAppOnDevice {
+    NSString *recipients = @"mailto:myemail@gmail.com?subject=subjecthere";
+    NSString *body = @"&body=bodyHere";
+    
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+}
+
+- (void) sendEmail {
+    NSLog(@"Send Email");
+    [self launchMailAppOnDevice];
+}
+
 /*
 #pragma mark - Navigation
 
