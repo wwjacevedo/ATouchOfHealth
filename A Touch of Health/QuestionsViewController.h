@@ -29,5 +29,7 @@
 
 - (void) yesButtonTapped:(UIButton *) sender;
 - (void) noButtonTapped:(UIButton *) sender;
-- (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath ;
+- (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath;
+
+- (void) readAnswersSaved ;
 @end

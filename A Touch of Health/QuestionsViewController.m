@@ -30,7 +30,7 @@
     }
     
 //    _back_button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(back:)];
-
+        [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
     
 //    self.back_button = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(back)];
 }
@@ -80,7 +80,7 @@
     
     if(distanceFromBottom < height)
     {
-        NSLog(@"end of the table");
+//        NSLog(@"end of the table");
     }
 }
 
@@ -187,6 +187,37 @@
 //Header back button action
 - (void) back:(UIBarButtonItem *) button {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) saveQuestionsState {
+    NSLog(@"saving questions answers");
+    
+    NSString *tempString = [[self.model.answers valueForKey:@"description"] componentsJoinedByString:@""];
+    
+    for (int index = 0; index < tempString.length; index++) {
+        NSString *tempString2 = [tempString substringWithRange:NSMakeRange(index, 1)];
+        NSLog(@"DATA: %@", tempString2);
+
+    }
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    tempString  = [[paths valueForKey:@"description"] componentsJoinedByString:@""];
+//    NSLog(@"PATHS: %@", tempString);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
+    [tempString writeToFile:appFile atomically:YES];
+    
+    self.readAnswersSaved;
+}
+
+- (void) readAnswersSaved {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
+    NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
+    NSLog(@"ANSWERS: %@", fileContent);
+
 }
 
 /*
