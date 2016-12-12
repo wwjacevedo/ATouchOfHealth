@@ -318,12 +318,8 @@
                                 <color key="textColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKz-Nz-nE6">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uKz-Nz-nE6" secondAttribute="height" multiplier="375:44" id="kAk-ak-Z3t"/>
-                                    <constraint firstAttribute="width" secondItem="uKz-Nz-nE6" secondAttribute="height" multiplier="375:44" id="lRN-Nd-etS"/>
-                                </constraints>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKz-Nz-nE6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -350,6 +346,7 @@
                             <constraint firstItem="wRo-2x-oWX" firstAttribute="leading" secondItem="vWh-Gs-wHC" secondAttribute="leading" id="0ei-td-6KD"/>
                             <constraint firstItem="ga2-3O-msg" firstAttribute="top" secondItem="oqR-Fn-30M" secondAttribute="bottom" constant="8" id="1bS-VQ-IbG"/>
                             <constraint firstItem="90k-6Q-8mK" firstAttribute="width" secondItem="Olg-Ug-cjl" secondAttribute="height" multiplier="86:667" id="2sP-3k-30M"/>
+                            <constraint firstItem="uKz-Nz-nE6" firstAttribute="width" secondItem="Olg-Ug-cjl" secondAttribute="height" multiplier="375:667" id="5I9-xz-aXc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xkx-sd-JUY" secondAttribute="leading" id="72c-ZG-Hoa"/>
                             <constraint firstItem="oqR-Fn-30M" firstAttribute="top" secondItem="vbX-B8-mFQ" secondAttribute="bottom" constant="8" id="BVM-44-kNM"/>
                             <constraint firstItem="SWU-NO-IG2" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leadingMargin" id="GmT-Tl-FWy"/>
@@ -370,6 +367,7 @@
                             <constraint firstItem="vWh-Gs-wHC" firstAttribute="leading" secondItem="XEf-1A-VN9" secondAttribute="trailing" constant="8" id="isY-eW-HOu"/>
                             <constraint firstItem="oqR-Fn-30M" firstAttribute="trailing" secondItem="ga2-3O-msg" secondAttribute="trailing" id="mIE-A2-eo3"/>
                             <constraint firstItem="HVr-bP-oIo" firstAttribute="top" secondItem="Xkx-sd-JUY" secondAttribute="bottom" constant="20" id="mx6-OE-qiB"/>
+                            <constraint firstItem="uKz-Nz-nE6" firstAttribute="centerX" secondItem="Olg-Ug-cjl" secondAttribute="centerX" id="oxt-Dg-grJ"/>
                             <constraint firstItem="vbX-B8-mFQ" firstAttribute="centerY" secondItem="Olg-Ug-cjl" secondAttribute="centerY" id="pHG-sN-KSj"/>
                             <constraint firstItem="Xkx-sd-JUY" firstAttribute="top" secondItem="XEf-1A-VN9" secondAttribute="bottom" constant="8" id="qEZ-1b-UZw"/>
                             <constraint firstItem="XEf-1A-VN9" firstAttribute="leading" secondItem="ga2-3O-msg" secondAttribute="trailing" constant="8" id="qND-Bk-2Su"/>
@@ -377,6 +375,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Xkx-sd-JUY" secondAttribute="trailing" id="ubu-nB-V6V"/>
                             <constraint firstItem="Xkx-sd-JUY" firstAttribute="top" secondItem="ga2-3O-msg" secondAttribute="bottom" constant="8" id="wke-lS-rEG"/>
                             <constraint firstItem="uKz-Nz-nE6" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leading" id="x5B-BG-oUX"/>
+                            <constraint firstItem="uKz-Nz-nE6" firstAttribute="width" secondItem="Olg-Ug-cjl" secondAttribute="width" id="y9A-Jg-Y0c"/>
                         </constraints>
                     </view>
                     <connections>
@@ -690,8 +689,8 @@
         <image name="white_lrg_img" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yct-so-gqe"/>
-        <segue reference="bJT-fK-kKo"/>
+        <segue reference="yvh-11-GIi"/>
         <segue reference="5cp-lQ-8Kn"/>
+        <segue reference="bJT-fK-kKo"/>
     </inferredMetricsTieBreakers>
 </document>
