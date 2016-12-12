@@ -41,8 +41,7 @@
     [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
     [self.clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
     [self.contact_us_button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.back_button = [[UIBarButtonItem alloc]initWithTitle:@"Yeah" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    [self.back_button addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,7 +173,7 @@
     if (index < 5) {
         [self.label_msg setText:@"Exercise & Nutritioin"];
         [self.label_image setImage:[UIImage imageNamed:@"exercise.png"]];
-        self.label_image.contentMode = UIViewContentModeScaleToFill;
+//        self.label_image.contentMode = UIViewContentModeScaleToFill;
         
     } else if (index > 4 && index < 10) {
         [self.label_msg setText:@"Meds for Health"];
@@ -193,7 +192,7 @@
 }
 
 //Header back button action
-- (void) back {
+- (void) back:(id) sender {
     NSLog(@"Back button");
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -255,13 +254,24 @@
 }
 
 - (void) launchMailAppOnDevice {
-    NSString *recipients = @"mailto:myemail@gmail.com?subject=subjecthere";
-    NSString *body = @"&body=bodyHere";
+//    NSString *recipients = @"mailto:myemail@gmail.com?subject=subjecthere";
+//    NSString *body = @"&body=bodyHere";
+//    
+//    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+//    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    
+    //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+    NSString *customURL = @"googlegmail://";
     
-    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
-    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+    if ([[UIApplication sharedApplication]
+         canOpenURL:[NSURL URLWithString:customURL]])
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL]];
+    }
+    else
+    {
+        //not installed, show popup for a user or an error
+    }
 }
 
 - (void) sendEmail {

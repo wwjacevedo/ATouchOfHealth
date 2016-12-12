@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		431B8C491DF70B1F00C127AC /* QuestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431B8C481DF70B1F00C127AC /* QuestionsModel.m */; };
 		431B8C581DF7441500C127AC /* CustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 431B8C571DF7441500C127AC /* CustomViewCell.m */; };
+		4328D2C61DFF183E00D2390A /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4328D2C51DFF183E00D2390A /* ScoreViewController.m */; };
+		4328D2CA1DFF193500D2390A /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4328D2C91DFF193500D2390A /* PrivacyPolicyViewController.m */; };
 		4386D7C51DF5E5D500F32137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7C41DF5E5D500F32137 /* main.m */; };
 		4386D7C81DF5E5D500F32137 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7C71DF5E5D500F32137 /* AppDelegate.m */; };
 		4386D7CB1DF5E5D500F32137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7CA1DF5E5D500F32137 /* ViewController.m */; };
@@ -25,17 +27,21 @@
 		431B8C481DF70B1F00C127AC /* QuestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsModel.m; sourceTree = "<group>"; };
 		431B8C561DF7441500C127AC /* CustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewCell.h; sourceTree = "<group>"; };
 		431B8C571DF7441500C127AC /* CustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewCell.m; sourceTree = "<group>"; };
+		4328D2C41DFF183E00D2390A /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreViewController.h; path = "A Touch of Health/ScoreViewController.h"; sourceTree = "<group>"; };
+		4328D2C51DFF183E00D2390A /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreViewController.m; path = "A Touch of Health/ScoreViewController.m"; sourceTree = "<group>"; };
+		4328D2C81DFF193500D2390A /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		4328D2C91DFF193500D2390A /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		4386D7C01DF5E5D500F32137 /* A Touch of Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Touch of Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4386D7C41DF5E5D500F32137 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4386D7C61DF5E5D500F32137 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4386D7C71DF5E5D500F32137 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4386D7C91DF5E5D500F32137 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4386D7CA1DF5E5D500F32137 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4386D7C91DF5E5D500F32137 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "A Touch of Health/ViewController.h"; sourceTree = "<group>"; };
+		4386D7CA1DF5E5D500F32137 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "A Touch of Health/ViewController.m"; sourceTree = "<group>"; };
 		4386D7D21DF5E5D500F32137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4386D7D41DF5E5D500F32137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4386D7DD1DF5EAFC00F32137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4386D7E61DF5EC7900F32137 /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsViewController.h; sourceTree = "<group>"; };
-		4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsViewController.m; sourceTree = "<group>"; };
+		4386D7E61DF5EC7900F32137 /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionsViewController.h; path = "A Touch of Health/QuestionsViewController.h"; sourceTree = "<group>"; };
+		4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionsViewController.m; path = "A Touch of Health/QuestionsViewController.m"; sourceTree = "<group>"; };
 		43E362CE1DF9CB1500435319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43E362D21DF9CF5100435319 /* Back-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-64.png"; sourceTree = "<group>"; };
 		43E362D41DF9D02800435319 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
@@ -61,6 +67,22 @@
 			name = models;
 			sourceTree = "<group>";
 		};
+		4328D2C71DFF186F00D2390A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4328D2C41DFF183E00D2390A /* ScoreViewController.h */,
+				4328D2C51DFF183E00D2390A /* ScoreViewController.m */,
+				4386D7E61DF5EC7900F32137 /* QuestionsViewController.h */,
+				4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */,
+				4386D7C91DF5E5D500F32137 /* ViewController.h */,
+				4386D7CA1DF5E5D500F32137 /* ViewController.m */,
+				4328D2C81DFF193500D2390A /* PrivacyPolicyViewController.h */,
+				4328D2C91DFF193500D2390A /* PrivacyPolicyViewController.m */,
+			);
+			name = controllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		4386D7B71DF5E5D500F32137 = {
 			isa = PBXGroup;
 			children = (
@@ -83,12 +105,9 @@
 				4386D7C11DF5E5D500F32137 /* Products */,
 				4386D7C31DF5E5D500F32137 /* Supporting Files */,
 				431B8C451DF7095E00C127AC /* models */,
+				4328D2C71DFF186F00D2390A /* controllers */,
 				4386D7C61DF5E5D500F32137 /* AppDelegate.h */,
 				4386D7C71DF5E5D500F32137 /* AppDelegate.m */,
-				4386D7C91DF5E5D500F32137 /* ViewController.h */,
-				4386D7CA1DF5E5D500F32137 /* ViewController.m */,
-				4386D7E61DF5EC7900F32137 /* QuestionsViewController.h */,
-				4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */,
 				431B8C561DF7441500C127AC /* CustomViewCell.h */,
 				431B8C571DF7441500C127AC /* CustomViewCell.m */,
 				43E362CE1DF9CB1500435319 /* Assets.xcassets */,
@@ -184,9 +203,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4386D7CB1DF5E5D500F32137 /* ViewController.m in Sources */,
+				4328D2C61DFF183E00D2390A /* ScoreViewController.m in Sources */,
 				4386D7C81DF5E5D500F32137 /* AppDelegate.m in Sources */,
 				431B8C491DF70B1F00C127AC /* QuestionsModel.m in Sources */,
 				431B8C581DF7441500C127AC /* CustomViewCell.m in Sources */,
+				4328D2CA1DFF193500D2390A /* PrivacyPolicyViewController.m in Sources */,
 				4386D7E81DF5EC7900F32137 /* QuestionsViewController.m in Sources */,
 				4386D7C51DF5E5D500F32137 /* main.m in Sources */,
 			);

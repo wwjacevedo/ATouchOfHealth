@@ -15,7 +15,7 @@
 @property (strong, nonatomic) QuestionsModel* model;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *header_icon_button;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *back_button;
+@property (strong, nonatomic) IBOutlet UIButton *back_button;
 @property (weak, nonatomic) IBOutlet UILabel *label_msg;
 @property (weak, nonatomic) IBOutlet UIImageView *label_image;
 @property (weak, nonatomic) IBOutlet UITableView *table_view;
@@ -41,4 +41,5 @@
 
 -(void)launchMailAppOnDevice;
 -(void)sendEmail;
+
 @end
