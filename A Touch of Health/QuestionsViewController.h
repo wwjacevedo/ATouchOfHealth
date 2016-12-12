@@ -31,5 +31,6 @@
 - (void) noButtonTapped:(UIButton *) sender;
 - (void) manageHeaderImageAndMsg :(NSIndexPath *) indexPath;
 
-- (void) readAnswersSaved ;
+- (void) readAnswersSaved;
+- (BOOL) checkForAnswers;
 @end

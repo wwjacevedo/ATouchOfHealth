@@ -18,6 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.checkForAnswers) {
+        NSLog(@"ANSWERS : YES");
+        self.readAnswersSaved;
+    } else {
+        NSLog(@"NO ANSWERS");
+    }
+    
     _model = [[QuestionsModel alloc] init];
     [_model initQuestionsAndAnswers];
     _table_view.delegate = self;
@@ -101,7 +109,7 @@
     if (indexPath != nil) {
         [table_view_cell.question setText:[_model.allQuestions objectAtIndex:indexPath.row]];
         
-        if ([[_model.answers objectAtIndex:indexPath.row] isEqual: @YES]) {
+        if ([[_model.answers objectAtIndex:indexPath.row] isEqual :@YES]) {
             [table_view_cell.yesButton setEnabled:@YES];
             [table_view_cell.noButton setEnabled:@NO];
         } else {
@@ -194,20 +202,10 @@
     
     NSString *tempString = [[self.model.answers valueForKey:@"description"] componentsJoinedByString:@""];
     
-    for (int index = 0; index < tempString.length; index++) {
-        NSString *tempString2 = [tempString substringWithRange:NSMakeRange(index, 1)];
-        NSLog(@"DATA: %@", tempString2);
-
-    }
-    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    tempString  = [[paths valueForKey:@"description"] componentsJoinedByString:@""];
-//    NSLog(@"PATHS: %@", tempString);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
     [tempString writeToFile:appFile atomically:YES];
-    
-    self.readAnswersSaved;
 }
 
 - (void) readAnswersSaved {
@@ -216,10 +214,37 @@
     
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
     NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
+    
+    
+    for (int index = 0; index < fileContent.length; index++) {
+        NSString *tempString = [fileContent substringWithRange:NSMakeRange(index, 1)];
+        
+        if ([tempString isEqualToString:@"1"]) {
+            [self.model.answers addObject:@YES];
+        } else {
+            [self.model.answers addObject:@NO];
+        }
+    }
+    
+
     NSLog(@"ANSWERS: %@", fileContent);
 
 }
 
+- (BOOL) checkForAnswers {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:filePath]){
+        return YES;
+    }
+    
+    return NO;
+}
 /*
 #pragma mark - Navigation
 
