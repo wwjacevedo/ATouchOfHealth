@@ -380,30 +380,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l8-eF-aVh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l8-eF-aVh">
                                 <rect key="frame" x="16" y="73" width="343" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0l8-eF-aVh" secondAttribute="height" multiplier="343:79" id="iM1-vt-Gfh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(c) 2016 Premier RN Geriatric Care's A Touch of Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSl-8d-g7Z">
-                                <rect key="frame" x="56" y="631" width="265" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(c) 2016 Premier RN Geriatric Care's A Touch of Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSl-8d-g7Z">
+                                <rect key="frame" x="16" y="615" width="343" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMZ-wd-2tT">
-                                <rect key="frame" x="16" y="597" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMZ-wd-2tT">
+                                <rect key="frame" x="16" y="556" width="111" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RMZ-wd-2tT" secondAttribute="height" multiplier="37:10" id="003-66-sAo"/>
+                                    <constraint firstAttribute="width" secondItem="RMZ-wd-2tT" secondAttribute="height" multiplier="37:10" id="5eL-8k-kLK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Contact Us">
                                     <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oct-hd-FC5">
-                                <rect key="frame" x="143" y="597" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oct-hd-FC5">
+                                <rect key="frame" x="135" y="556" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oct-hd-FC5" secondAttribute="height" multiplier="52:15" id="4cP-9Q-BPu"/>
+                                    <constraint firstAttribute="width" secondItem="oct-hd-FC5" secondAttribute="height" multiplier="52:15" id="Th0-E5-uJY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="My Score(s)">
                                     <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -413,29 +422,22 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-PU-N38">
-                                <rect key="frame" x="239" y="597" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-PU-N38">
+                                <rect key="frame" x="247" y="555" width="112" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h2G-PU-N38" secondAttribute="height" multiplier="112:31" id="Bhb-TR-qCM"/>
+                                    <constraint firstAttribute="width" secondItem="h2G-PU-N38" secondAttribute="height" multiplier="112:31" id="sTT-dK-Kah"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Privacy Policy">
                                     <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxY-0i-box">
-                                <rect key="frame" x="16" y="559" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="I agree to Privacy Policy's">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="pVf-Nt-zff" kind="show" id="yvh-11-GIi">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-DV-rvT">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-DV-rvT">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KZ2-DV-rvT" secondAttribute="height" multiplier="375:44" id="NxS-hm-u4S"/>
+                                </constraints>
                                 <color key="barTintColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -459,16 +461,64 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw8-sT-MEc">
-                                <rect key="frame" x="16" y="160" width="343" height="391"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw8-sT-MEc">
+                                <rect key="frame" x="16" y="159" width="343" height="287"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mw8-sT-MEc" secondAttribute="height" multiplier="49:41" id="npV-bz-5vk"/>
+                                </constraints>
                                 <string key="text">All information stated in the App is the sole private and confidential property of A Touch of Health Premier RN Geriatric Care and Premier Life Plannig Care Management affiliates.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxY-0i-box">
+                                <rect key="frame" x="16" y="496" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uxY-0i-box" secondAttribute="height" multiplier="343:30" id="IVc-8H-IyT"/>
+                                    <constraint firstAttribute="height" constant="30" id="bCu-c2-xI4"/>
+                                    <constraint firstAttribute="width" secondItem="uxY-0i-box" secondAttribute="height" multiplier="343:30" id="eKe-J9-46o"/>
+                                </constraints>
+                                <state key="normal" title="I agree to Privacy Policy's">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pVf-Nt-zff" kind="show" id="yvh-11-GIi">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RMZ-wd-2tT" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="1br-qi-AcM"/>
+                            <constraint firstItem="oct-hd-FC5" firstAttribute="leading" secondItem="RMZ-wd-2tT" secondAttribute="trailing" constant="8" id="2Al-Qw-V0i"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="RMZ-wd-2tT" secondAttribute="bottom" constant="29" id="3JN-ZN-NqE"/>
+                            <constraint firstItem="mw8-sT-MEc" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="72k-mp-Ioq"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="width" secondItem="dDb-dq-fSo" secondAttribute="height" multiplier="343:667" id="8Lc-6O-xqh"/>
+                            <constraint firstItem="mw8-sT-MEc" firstAttribute="top" secondItem="0l8-eF-aVh" secondAttribute="bottom" constant="7" id="AhW-Oe-9if"/>
+                            <constraint firstItem="KZ2-DV-rvT" firstAttribute="top" secondItem="dDb-dq-fSo" secondAttribute="top" constant="20" id="Cjf-9g-kUn"/>
+                            <constraint firstItem="KZ2-DV-rvT" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leading" id="Glw-pQ-OyF"/>
+                            <constraint firstItem="0l8-eF-aVh" firstAttribute="top" secondItem="KZ2-DV-rvT" secondAttribute="bottom" constant="9" id="Iif-hx-28d"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="centerX" secondItem="dDb-dq-fSo" secondAttribute="centerX" id="Lki-Fh-c14"/>
+                            <constraint firstItem="oct-hd-FC5" firstAttribute="leading" secondItem="RMZ-wd-2tT" secondAttribute="trailing" constant="8" id="OR5-IS-1Yg"/>
+                            <constraint firstItem="mw8-sT-MEc" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="Opo-Fd-tBX"/>
+                            <constraint firstItem="uxY-0i-box" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="SMi-C5-QJB"/>
+                            <constraint firstItem="0l8-eF-aVh" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="Vdk-Gv-SW7"/>
+                            <constraint firstItem="h2G-PU-N38" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="29" id="Xim-gw-Mab"/>
+                            <constraint firstItem="Ft1-pr-LDb" firstAttribute="top" secondItem="lSl-8d-g7Z" secondAttribute="bottom" constant="10" id="cQS-KQ-vWh"/>
+                            <constraint firstItem="uxY-0i-box" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="dSe-L1-Yc6"/>
+                            <constraint firstItem="uxY-0i-box" firstAttribute="top" secondItem="mw8-sT-MEc" secondAttribute="bottom" constant="50" id="e1U-iR-saB"/>
+                            <constraint firstAttribute="trailing" secondItem="KZ2-DV-rvT" secondAttribute="trailing" id="eRg-IR-Jch"/>
+                            <constraint firstItem="0l8-eF-aVh" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="esL-8V-o11"/>
+                            <constraint firstItem="oct-hd-FC5" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="30" id="grO-SK-7od"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="oct-hd-FC5" secondAttribute="bottom" constant="29" id="gy6-yJ-Fvl"/>
+                            <constraint firstItem="RMZ-wd-2tT" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="30" id="j8b-vH-ufl"/>
+                            <constraint firstItem="h2G-PU-N38" firstAttribute="leading" secondItem="oct-hd-FC5" secondAttribute="trailing" constant="8" id="kdN-yA-wln"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="h2G-PU-N38" secondAttribute="bottom" constant="29" id="li8-1g-QFk"/>
+                            <constraint firstItem="h2G-PU-N38" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="tBd-1m-1wb"/>
+                            <constraint firstItem="0l8-eF-aVh" firstAttribute="top" secondItem="KZ2-DV-rvT" secondAttribute="bottom" constant="9" id="w2Y-5k-6WW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-5k-dcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -620,8 +670,8 @@
         <image name="white_lrg_img" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qX6-ES-yXN"/>
-        <segue reference="bJT-fK-kKo"/>
+        <segue reference="yvh-11-GIi"/>
         <segue reference="5cp-lQ-8Kn"/>
+        <segue reference="huH-Jf-xfP"/>
     </inferredMetricsTieBreakers>
 </document>
