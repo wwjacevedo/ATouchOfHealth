@@ -18,6 +18,7 @@
 		4386D7DE1DF5EAFC00F32137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4386D7DC1DF5EAFC00F32137 /* Main.storyboard */; };
 		4386D7E81DF5EC7900F32137 /* QuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */; };
 		43B966B11E0039C8009B1801 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B966B01E0039C8009B1801 /* MessageUI.framework */; };
+		43B966B71E007689009B1801 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B966B61E007689009B1801 /* ResultsViewController.m */; };
 		43E362CF1DF9CB1500435319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E362CE1DF9CB1500435319 /* Assets.xcassets */; };
 		43E362D31DF9CF5100435319 /* Back-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E362D21DF9CF5100435319 /* Back-64.png */; };
 		43E362D51DF9D02800435319 /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E362D41DF9D02800435319 /* Icon-App-29x29@2x.png */; };
@@ -44,6 +45,8 @@
 		4386D7E61DF5EC7900F32137 /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionsViewController.h; path = "A Touch of Health/QuestionsViewController.h"; sourceTree = "<group>"; };
 		4386D7E71DF5EC7900F32137 /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionsViewController.m; path = "A Touch of Health/QuestionsViewController.m"; sourceTree = "<group>"; };
 		43B966B01E0039C8009B1801 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		43B966B51E007689009B1801 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		43B966B61E007689009B1801 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		43E362CE1DF9CB1500435319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43E362D21DF9CF5100435319 /* Back-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-64.png"; sourceTree = "<group>"; };
 		43E362D41DF9D02800435319 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				4386D7CA1DF5E5D500F32137 /* ViewController.m */,
 				4328D2C81DFF193500D2390A /* PrivacyPolicyViewController.h */,
 				4328D2C91DFF193500D2390A /* PrivacyPolicyViewController.m */,
+				43B966B51E007689009B1801 /* ResultsViewController.h */,
+				43B966B61E007689009B1801 /* ResultsViewController.m */,
 			);
 			name = controllers;
 			path = ..;
@@ -171,7 +176,6 @@
 				TargetAttributes = {
 					4386D7BF1DF5E5D500F32137 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = YP7YX8QJ75;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -220,6 +224,7 @@
 				431B8C491DF70B1F00C127AC /* QuestionsModel.m in Sources */,
 				431B8C581DF7441500C127AC /* CustomViewCell.m in Sources */,
 				4328D2CA1DFF193500D2390A /* PrivacyPolicyViewController.m in Sources */,
+				43B966B71E007689009B1801 /* ResultsViewController.m in Sources */,
 				4386D7E81DF5EC7900F32137 /* QuestionsViewController.m in Sources */,
 				4386D7C51DF5E5D500F32137 /* main.m in Sources */,
 			);
@@ -339,8 +344,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YP7YX8QJ75;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "A Touch of Health/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wovenware.A-Touch-of-Health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,8 +357,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YP7YX8QJ75;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "A Touch of Health/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wovenware.A-Touch-of-Health";
 				PRODUCT_NAME = "$(TARGET_NAME)";

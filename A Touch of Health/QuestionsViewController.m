@@ -16,14 +16,14 @@
 
 @implementation QuestionsViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     
     _model = [[QuestionsModel alloc] init];
     [_model initQuestionsAndAnswers];
     _table_view.delegate = self;
     _table_view.dataSource = self;
-    _moreQuestions = false;
+    _moreQuestions = NO;
     _numOfQuestions = 15;
     
     if (self.checkForAnswers) {
@@ -37,6 +37,9 @@
     [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
     [self.clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
     [self.contact_us_button addTarget:self action:@selector(sendEmail:) forControlEvents:UIControlEventTouchUpInside];
+    [self.more_questions_button addTarget:self action:@selector(activateMoreQuestions) forControlEvents:UIControlEventTouchUpInside];
+    [self.my_result addTarget:self action:@selector(saveToResults) forControlEvents:UIControlEventTouchUpInside];
+    [self.no_thanks_button addTarget:self action:@selector(saveToResults) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -70,7 +73,7 @@
     
     CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
     
-    if(distanceFromBottom < (height)) {
+    if(distanceFromBottom < (height + 80)) {
         NSLog(@"end of the table %f", height);
         
 //        [self.main_buttons setHidden:YES];
@@ -245,6 +248,51 @@
     [self saveQuestionsState];
     [self.table_view reloadData];
     NSLog(@"Answers cleard");
+}
+
+- (void) activateMoreQuestions {
+    self.moreQuestions = YES;
+    self.numOfQuestions = 20;
+    [self.table_view reloadData];
+}
+
+- (void) saveToResults {
+    
+    int trueAnswersCount= 0;
+    
+    for (int index = 0; index < [self.model.answers count]; index++) {
+        if ([[self.model.answers objectAtIndex:index] isEqualToString:@"1"]) {
+            trueAnswersCount++;
+        }
+    }
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
+    NSLog(@"Results: %@",[dateFormatter stringFromDate:[NSDate date]]);
+    
+    NSMutableString *dateString = [[NSMutableString alloc] init];
+
+    [dateString appendString:[dateFormatter stringFromDate:[NSDate date]]];
+    [dateString appendString:@"Score = "];
+    [dateString appendString:[NSString stringWithFormat:@"%d\\n", trueAnswersCount]];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"results.txt"];
+    
+    NSString *contents = [NSString stringWithContentsOfFile:appFile
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+    
+    if (contents == nil) {
+        [dateString writeToFile:appFile atomically:YES];
+    } else {
+        contents = [contents stringByAppendingString:dateString];
+        [contents writeToFile:appFile atomically:YES encoding: NSUnicodeStringEncoding error:nil];
+        
+        NSLog(@"%@", contents);
+    }
 }
 
 - (void) sendEmail:(id) sender {
