@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self readSaveResults];
     // Do any additional setup after loading the view.
 }
 
@@ -23,6 +24,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) readSaveResults {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"results.txt"];
+    NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
+    NSArray* allLinedStrings = [fileContent componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    self.scores = [[NSMutableArray alloc] initWithArray:allLinedStrings];
+    
+    for (int index = 0; index < [allLinedStrings count]; index++) {
+          NSLog(@"ANSWERS: %@", [allLinedStrings objectAtIndex:index]);
+    }
+    
+  
+    
+}
+
 
 /*
 #pragma mark - Navigation

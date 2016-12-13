@@ -10,4 +10,8 @@
 
 @interface ScoreViewController : UIViewController
 
+@property NSMutableArray *scores;
+
+- (void) readSaveResults;
+
 @end

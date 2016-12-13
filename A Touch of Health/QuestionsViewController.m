@@ -274,7 +274,7 @@
     NSMutableString *dateString = [[NSMutableString alloc] init];
 
     [dateString appendString:[dateFormatter stringFromDate:[NSDate date]]];
-    [dateString appendString:@"Score = "];
+    [dateString appendString:@" Score = "];
     [dateString appendString:[NSString stringWithFormat:@"%d\\n", trueAnswersCount]];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
