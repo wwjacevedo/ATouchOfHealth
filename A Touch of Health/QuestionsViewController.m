@@ -23,12 +23,8 @@
     [_model initQuestionsAndAnswers];
     _table_view.delegate = self;
     _table_view.dataSource = self;
-    
-    if (_moreQuestions) {
-        _numOfQuestions = 20;
-    } else {
-        _numOfQuestions = 15;
-    }
+    _moreQuestions = false;
+    _numOfQuestions = 15;
     
     if (self.checkForAnswers) {
         NSLog(@"ANSWERS : YES");
@@ -42,6 +38,16 @@
     [self.clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
     [self.contact_us_button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
     [self.back_button addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    if (_moreQuestions) {
+        _numOfQuestions = 20;
+    } else {
+        _numOfQuestions = 15;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,9 +91,24 @@
     
     CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
     
-    if(distanceFromBottom < height)
-    {
-//        NSLog(@"end of the table");
+    if(distanceFromBottom < (height + 100)) {
+        NSLog(@"end of the table %f", height);
+        
+        [self.more_buttons_view_first setHidden:NO];
+        [self.more_buttons_view setHidden:NO];
+        
+//        if (self.moreQuestions) {
+//            [self.more_buttons_view_first setHidden:YES];
+//            [self.more_buttons_view setHidden:NO];
+//        } else {
+//            [self.more_buttons_view_first setHidden:NO];
+//            [self.more_buttons_view setHidden:YES];
+//        }
+
+    } else {
+        
+        [self.more_buttons_view_first setHidden:YES];
+        [self.more_buttons_view setHidden:YES];
     }
 }
 

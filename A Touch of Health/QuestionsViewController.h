@@ -24,6 +24,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *clear_button;
 @property (weak, nonatomic) IBOutlet UIButton *my_scores_button;
 @property (weak, nonatomic) IBOutlet UIButton *privacy_policy_button;
+@property (weak, nonatomic) IBOutlet UIView *main_buttons;
+@property (weak, nonatomic) IBOutlet UIView *more_buttons_view;
+@property (weak, nonatomic) IBOutlet UIButton *my_result;
+@property (weak, nonatomic) IBOutlet UIButton *more_questions_button;
+@property (weak, nonatomic) IBOutlet UIButton *no_thanks_button;
+@property (weak, nonatomic) IBOutlet UIView *more_buttons_view_first;
 
 @property Boolean moreQuestions;
 @property NSInteger numOfQuestions;
