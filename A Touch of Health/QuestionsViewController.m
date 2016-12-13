@@ -36,8 +36,7 @@
 //    _back_button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(back)];
     [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
     [self.clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
-    [self.contact_us_button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
-    [self.back_button addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contact_us_button addTarget:self action:@selector(sendEmail:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -63,27 +62,7 @@
     return 1;
 }
 
-//- (NSString *)tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section {
-//    switch (section) {
-//        case 1:
-//            return @"Exercise & Nutrition";
-//            break;
-//        case 2:
-//            return @"Meds for Health";
-//            break;
-//        case 3:
-//            return @"Mind and Body";
-//            break;
-//        case 4:
-//            return @"More on My Health";
-//            break;
-//        default:
-//            return @"";
-//            break;
-//    }
-//}
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat height = scrollView.frame.size.height;
     
@@ -91,24 +70,24 @@
     
     CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
     
-    if(distanceFromBottom < (height + 100)) {
+    if(distanceFromBottom < (height)) {
         NSLog(@"end of the table %f", height);
         
-        [self.more_buttons_view_first setHidden:NO];
-        [self.more_buttons_view setHidden:NO];
-        
-//        if (self.moreQuestions) {
-//            [self.more_buttons_view_first setHidden:YES];
-//            [self.more_buttons_view setHidden:NO];
-//        } else {
-//            [self.more_buttons_view_first setHidden:NO];
-//            [self.more_buttons_view setHidden:YES];
-//        }
+//        [self.main_buttons setHidden:YES];
+
+        if (self.moreQuestions) {
+            [self.more_buttons_view_first setHidden:YES];
+            [self.results_button_view setHidden:NO];
+        } else {
+            [self.more_buttons_view_first setHidden:NO];
+            [self.results_button_view setHidden:YES];
+        }
 
     } else {
         
         [self.more_buttons_view_first setHidden:YES];
-        [self.more_buttons_view setHidden:YES];
+        [self.results_button_view setHidden:YES];
+//        [self.main_buttons setHidden:NO];
     }
 }
 
@@ -212,12 +191,6 @@
     
 }
 
-//Header back button action
-- (void) back:(id) sender {
-    NSLog(@"Back button");
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (void) saveQuestionsState {
     NSLog(@"saving questions answers");
     
@@ -274,30 +247,63 @@
     NSLog(@"Answers cleard");
 }
 
-- (void) launchMailAppOnDevice {
-//    NSString *recipients = @"mailto:myemail@gmail.com?subject=subjecthere";
-//    NSString *body = @"&body=bodyHere";
-//    
-//    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
-//    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    
-    //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
-    NSString *customURL = @"googlegmail://";
+- (void) sendEmail:(id) sender {
+    // Email Subject
+    NSString *emailTitle = @"A Touch of Health";
+    // Email Content
+    NSString *messageBody = @"Write subject here.";
+    // To address
+    NSString *toRecipents = @"contactus@premierlifeplanning.com";
     
-    if ([[UIApplication sharedApplication]
-         canOpenURL:[NSURL URLWithString:customURL]])
-    {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL]];
-    }
-    else
-    {
-        //not installed, show popup for a user or an error
-    }
+    [self sendEmailTo:toRecipents withSubject:emailTitle withBody:messageBody];
+    
+//    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+//    
+//    mailComposer.mailComposeDelegate = self;
+//    
+//    [mailComposer setTitle:emailTitle];
+//    [mailComposer setSubject:messageBody];
+//    [mailComposer setToRecipients:toRecipents];
+//    
+//    // Present mail view controller on screen
+//    [self presentViewController:self animated:YES completion:NULL];
 }
 
-- (void) sendEmail {
-    NSLog(@"Send Email");
-    [self launchMailAppOnDevice];
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void) sendEmailTo:(NSString *)to withSubject:(NSString *)subject withBody:(NSString *)body {
+
+    
+//    NSString *mailString = [NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@"];
+//                            [to stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+//                            [subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+//                            [body stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+    #define mailString @"mailto:sb@sw.com?subject=title&body=content"
+    
+    NSString *url = [mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 /*
@@ -309,5 +315,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end
