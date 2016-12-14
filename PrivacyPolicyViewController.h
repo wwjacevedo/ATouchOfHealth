@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PrivacyPolicyViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *contact_us_button;
 
 @end

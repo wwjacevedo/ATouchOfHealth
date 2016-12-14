@@ -102,11 +102,11 @@
     
     [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
-    table_view_cell.yesButton.tag = indexPath.row;
+
     
     [table_view_cell.noButton addTarget:self action:@selector(noButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.noButton setShowsTouchWhenHighlighted:@YES];
-    table_view_cell.noButton.tag = indexPath.row;
+
     
     if (indexPath != nil) {
         [table_view_cell.question setText:[_model.allQuestions objectAtIndex:indexPath.row]];
@@ -171,24 +171,27 @@
 - (void) manageHeaderImageAndMsgRespectTo :(NSIndexPath *) indexPath {
     
     NSArray *indexPathArray = [self.table_view indexPathsForVisibleRows];
-    NSIndexPath *indexPath = [indexPathArray objectAtIndex:[indexPathArray count] - 1];    NSInteger index = (NSInteger) indexPath.row;
+    NSIndexPath *indexPathTemp = [indexPathArray objectAtIndex:0];
+
+    NSInteger index = (NSInteger) indexPathTemp.row;
+    
     
     self.label_image.contentMode = UIViewContentModeScaleAspectFit;
     
-    if (index < 5) {
+    if (index < 4) {
         [self.label_msg setText:@"Exercise & Nutritioin"];
         [self.label_image setImage:[UIImage imageNamed:@"exercise.png"]];
 //        self.label_image.contentMode = UIViewContentModeScaleToFill;
         
-    } else if (index > 4 && index < 10) {
+    } else if (index > 3 && index <= 8) {
         [self.label_msg setText:@"Meds for Health"];
         [self.label_image setImage:[UIImage imageNamed:@"meds_health.png"]];
         
-    } else if (index > 10 && index < 15) {
+    } else if (index > 8 && index <= 13) {
         [self.label_msg setText:@"Mind and Body"];
         [self.label_image setImage:[UIImage imageNamed:@"mind_body.png"]];
         
-    } else if (index > 15) {
+    } else if (index > 13) {
         [self.label_msg setText:@"More on My Health"];
         [self.label_image setImage:[UIImage imageNamed:@"more_health.png"]];
     }
@@ -262,7 +265,7 @@
     
     NSArray *indexPathArray = [self.table_view indexPathsForVisibleRows];
     NSIndexPath *indexPath = [indexPathArray objectAtIndex:[indexPathArray count] - 1];
-    [self.table_view scrollToRowAtIndexPath:indexPath atScrollPosition:indexPath.row + 3 animated:YES];
+    [self.table_view scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
 }
 
 - (void) saveToResults {
