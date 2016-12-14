@@ -70,26 +70,19 @@
         //High Gradient
         return 2;
     }
-    
-    return nil;
 }
 
 - (void) goToGeriatricSite {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @""]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://premiergeriatricrn.com"]];
 }
 
 - (void) goToLifePlanningSite {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @""]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://premierlifeplanning.com"]];
 }
 
 - (void) sendEmailTo:(NSString *)to withSubject:(NSString *)subject withBody:(NSString *)body {
     
-    
-    //    NSString *mailString = [NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@"];
-    //                            [to stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-    //                            [subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-    //                            [body stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-#define mailString @"mailto:sb@sw.com?subject=title&body=content"
+    #define mailString @"mailto:sb@sw.com?subject=title&body=content"
     
     NSString *url = [mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
@@ -104,18 +97,8 @@
     NSString *toRecipents = @"contactus@premierlifeplanning.com";
     
     [self sendEmailTo:toRecipents withSubject:emailTitle withBody:messageBody];
-    
-    //    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
-    //
-    //    mailComposer.mailComposeDelegate = self;
-    //
-    //    [mailComposer setTitle:emailTitle];
-    //    [mailComposer setSubject:messageBody];
-    //    [mailComposer setToRecipients:toRecipents];
-    //
-    //    // Present mail view controller on screen
-    //    [self presentViewController:self animated:YES completion:NULL];
 }
+
 /*
 #pragma mark - Navigation
 

@@ -144,10 +144,12 @@
 
     if (button.isEnabled) {
         [self.model.answers replaceObjectAtIndex:index withObject:@"1"];
+        [self saveQuestionsState];
         [self.table_view reloadData];
 
     } else {
         [self.model.answers replaceObjectAtIndex:index withObject:@"0"];
+        [self saveQuestionsState];
         [self.table_view reloadData];
     }
 }
@@ -168,8 +170,8 @@
 
 - (void) manageHeaderImageAndMsgRespectTo :(NSIndexPath *) indexPath {
     
-    NSInteger index = (NSInteger) indexPath.row;
-    
+    NSArray *indexPathArray = [self.table_view indexPathsForVisibleRows];
+    NSIndexPath *indexPath = [indexPathArray objectAtIndex:[indexPathArray count] - 1];    NSInteger index = (NSInteger) indexPath.row;
     
     self.label_image.contentMode = UIViewContentModeScaleAspectFit;
     
@@ -186,7 +188,7 @@
         [self.label_msg setText:@"Mind and Body"];
         [self.label_image setImage:[UIImage imageNamed:@"mind_body.png"]];
         
-    } else {
+    } else if (index > 15) {
         [self.label_msg setText:@"More on My Health"];
         [self.label_image setImage:[UIImage imageNamed:@"more_health.png"]];
     }
@@ -253,14 +255,20 @@
 - (void) activateMoreQuestions {
     self.moreQuestions = YES;
     self.numOfQuestions = 20;
+    [self.results_button_view setHidden:YES];
+    [self.more_buttons_view_first setHidden:YES];
     [self.table_view reloadData];
+    [self.table_view flashScrollIndicators];
+    
+    NSArray *indexPathArray = [self.table_view indexPathsForVisibleRows];
+    NSIndexPath *indexPath = [indexPathArray objectAtIndex:[indexPathArray count] - 1];
+    [self.table_view scrollToRowAtIndexPath:indexPath atScrollPosition:indexPath.row + 3 animated:YES];
 }
 
 - (void) saveToResults {
+    int trueAnswersCount = 0;
     
-    int trueAnswersCount= 0;
-    
-    for (int index = 0; index < [self.model.answers count]; index++) {
+    for (int index = 0; index < 15; index++) {
         if ([[self.model.answers objectAtIndex:index] isEqualToString:@"1"]) {
             trueAnswersCount++;
         }
@@ -280,18 +288,21 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"results.txt"];
-    
+    NSError *error;
     NSString *contents = [NSString stringWithContentsOfFile:appFile
                                                    encoding:NSUTF8StringEncoding
-                                                      error:nil];
+                                                      error:&error];
+    
+    if (error == nil) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
     
     if (contents == nil) {
         [dateString writeToFile:appFile atomically:YES];
     } else {
-        contents = [contents stringByAppendingFormat:@"%@%@", contents, dateString];
-        [contents writeToFile:appFile atomically:YES encoding:NSUnicodeStringEncoding error:nil];
-        
-        NSLog(@"%@", contents);
+        contents = [contents stringByAppendingFormat:@"%@", dateString];
+        [contents writeToFile:appFile atomically:YES encoding:NSUTF8StringEncoding error:nil];
     }
 }
 
