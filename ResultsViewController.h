@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResultsModel.h"
 
 @interface ResultsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *geriatric_care_button;
 @property (weak, nonatomic) IBOutlet UIButton *life_planning_button;
 @property (weak, nonatomic) IBOutlet UILabel *msg_one;
 @property (weak, nonatomic) IBOutlet UILabel *msg_two;
+
+@property (weak, nonatomic) ResultsModel *model;
 
 @end

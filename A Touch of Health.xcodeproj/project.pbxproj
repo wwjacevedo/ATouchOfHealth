@@ -11,6 +11,7 @@
 		431B8C581DF7441500C127AC /* CustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 431B8C571DF7441500C127AC /* CustomViewCell.m */; };
 		4328D2C61DFF183E00D2390A /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4328D2C51DFF183E00D2390A /* ScoreViewController.m */; };
 		4328D2CA1DFF193500D2390A /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4328D2C91DFF193500D2390A /* PrivacyPolicyViewController.m */; };
+		437BFDFA1E00DAE900E0C89C /* ResultsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 437BFDF91E00DAE900E0C89C /* ResultsModel.m */; };
 		4386D7C51DF5E5D500F32137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7C41DF5E5D500F32137 /* main.m */; };
 		4386D7C81DF5E5D500F32137 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7C71DF5E5D500F32137 /* AppDelegate.m */; };
 		4386D7CB1DF5E5D500F32137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386D7CA1DF5E5D500F32137 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 		4328D2C51DFF183E00D2390A /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreViewController.m; path = "A Touch of Health/ScoreViewController.m"; sourceTree = "<group>"; };
 		4328D2C81DFF193500D2390A /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		4328D2C91DFF193500D2390A /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		437BFDF81E00DAE900E0C89C /* ResultsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsModel.h; sourceTree = "<group>"; };
+		437BFDF91E00DAE900E0C89C /* ResultsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsModel.m; sourceTree = "<group>"; };
 		4386D7C01DF5E5D500F32137 /* A Touch of Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Touch of Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4386D7C41DF5E5D500F32137 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4386D7C61DF5E5D500F32137 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 			children = (
 				431B8C471DF70B1F00C127AC /* QuestionsModel.h */,
 				431B8C481DF70B1F00C127AC /* QuestionsModel.m */,
+				437BFDF81E00DAE900E0C89C /* ResultsModel.h */,
+				437BFDF91E00DAE900E0C89C /* ResultsModel.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				437BFDFA1E00DAE900E0C89C /* ResultsModel.m in Sources */,
 				4386D7CB1DF5E5D500F32137 /* ViewController.m in Sources */,
 				4328D2C61DFF183E00D2390A /* ScoreViewController.m in Sources */,
 				4386D7C81DF5E5D500F32137 /* AppDelegate.m in Sources */,
@@ -347,7 +353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G95S9WN226;
 				INFOPLIST_FILE = "A Touch of Health/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wovenware.A-Touch-of-Health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G95S9WN226;
 				INFOPLIST_FILE = "A Touch of Health/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wovenware.A-Touch-of-Health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
