@@ -14,17 +14,108 @@
 
 @implementation ResultsViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
+    self.model = [[ResultsModel alloc] init];
     [self.model initMsgs];
-    // Do any additional setup after loading the view.
+    self.results = 0;
+    
+    [self readAnswersSaved];
+    [self displayMsgs];
+    
+    [self.contact_us_button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
+    [self.geriatric_care_button addTarget:self action:@selector(goToGeriatricSite) forControlEvents:UIControlEventTouchUpInside];
+    [self.life_planning_button addTarget:self action:@selector(goToLifePlanningSite) forControlEvents:UIControlEventTouchUpInside];
+    // Do any additional setup after loading the view
 }
 
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void) readAnswersSaved {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
+    NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
+    
+    
+    for (int index = 0; index < 15; index++) {
+        NSString *tempString = [fileContent substringWithRange:NSMakeRange(index, 1)];
+        
+        if ([tempString isEqualToString:@"1"]) {
+            self.results++;
+        }
+    }
+    
+}
+
+- (void) displayMsgs {
+    int index  = [self calculateResults];
+    [self.msg_one setText:[self.model.firstMsgs objectAtIndex:index]];
+    [self.msg_two setText:[self.model.secondMsgs objectAtIndex:index]];
+}
+
+- (int) calculateResults {
+    
+    if (_results <= 5) {
+        //Low Gradient
+        return 0;
+    } else if (_results > 5 && _results <= 10) {
+        //Medium Gradient
+        return 1;
+    } else {
+        //High Gradient
+        return 2;
+    }
+    
+    return nil;
+}
+
+- (void) goToGeriatricSite {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @""]];
+}
+
+- (void) goToLifePlanningSite {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @""]];
+}
+
+- (void) sendEmailTo:(NSString *)to withSubject:(NSString *)subject withBody:(NSString *)body {
+    
+    
+    //    NSString *mailString = [NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@"];
+    //                            [to stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+    //                            [subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+    //                            [body stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+#define mailString @"mailto:sb@sw.com?subject=title&body=content"
+    
+    NSString *url = [mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+}
+
+- (void) sendEmail {
+    // Email Subject
+    NSString *emailTitle = @"A Touch of Health";
+    // Email Content
+    NSString *messageBody = @"Write subject here.";
+    // To address
+    NSString *toRecipents = @"contactus@premierlifeplanning.com";
+    
+    [self sendEmailTo:toRecipents withSubject:emailTitle withBody:messageBody];
+    
+    //    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    //
+    //    mailComposer.mailComposeDelegate = self;
+    //
+    //    [mailComposer setTitle:emailTitle];
+    //    [mailComposer setSubject:messageBody];
+    //    [mailComposer setToRecipients:toRecipents];
+    //
+    //    // Present mail view controller on screen
+    //    [self presentViewController:self animated:YES completion:NULL];
+}
 /*
 #pragma mark - Navigation
 

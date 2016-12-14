@@ -14,7 +14,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *life_planning_button;
 @property (weak, nonatomic) IBOutlet UILabel *msg_one;
 @property (weak, nonatomic) IBOutlet UILabel *msg_two;
+@property (weak, nonatomic) IBOutlet UIButton *contact_us_button;
 
-@property (weak, nonatomic) ResultsModel *model;
+@property (strong, nonatomic) ResultsModel *model;
+@property int results;
+
+- (void) readAnswersSaved;
+- (int) calculateResults;
+- (void) displayMsgs;
+- (void) sendEmail;
+- (void) sendEmailTo:(NSString *)to withSubject:(NSString *)subject withBody:(NSString *)body;
+- (void) goToGeriatricSite;
+- (void) goToLifePlanningSite;
 
 @end

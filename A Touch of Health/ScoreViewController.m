@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _table_view.delegate = self;
+    _table_view.dataSource = self;
     [self readSaveResults];
     // Do any additional setup after loading the view.
 }
@@ -35,12 +37,25 @@
     
     self.scores = [[NSMutableArray alloc] initWithArray:allLinedStrings];
     
-    for (int index = 0; index < [allLinedStrings count]; index++) {
-          NSLog(@"ANSWERS: %@", [allLinedStrings objectAtIndex:index]);
+}
+
+- (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
+    return [self.scores count];
+}
+
+- (UITableViewCell*) tableView: (UITableView*) tableView cellForRowAtIndexPath: (NSIndexPath*) indexPath
+{
+    static NSString *CellIdentifier = @"simple_table_cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-  
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    [cell.textLabel setText:[self.scores objectAtIndex:indexPath.row]];
     
+    return cell;
 }
 
 

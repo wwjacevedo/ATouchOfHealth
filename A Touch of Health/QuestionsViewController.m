@@ -275,7 +275,7 @@
 
     [dateString appendString:[dateFormatter stringFromDate:[NSDate date]]];
     [dateString appendString:@" Score = "];
-    [dateString appendString:[NSString stringWithFormat:@"%d\\n", trueAnswersCount]];
+    [dateString appendString:[NSString stringWithFormat:@"%d\n", trueAnswersCount]];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -288,8 +288,8 @@
     if (contents == nil) {
         [dateString writeToFile:appFile atomically:YES];
     } else {
-        contents = [contents stringByAppendingString:dateString];
-        [contents writeToFile:appFile atomically:YES encoding: NSUnicodeStringEncoding error:nil];
+        contents = [contents stringByAppendingFormat:@"%@%@", contents, dateString];
+        [contents writeToFile:appFile atomically:YES encoding:NSUnicodeStringEncoding error:nil];
         
         NSLog(@"%@", contents);
     }
