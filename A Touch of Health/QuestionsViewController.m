@@ -179,7 +179,7 @@
     self.label_image.contentMode = UIViewContentModeScaleAspectFit;
     
     if (index < 4) {
-        [self.label_msg setText:@"Exercise & Nutritioin"];
+        [self.label_msg setText:@"Exercise & Nutrition"];
         [self.label_image setImage:[UIImage imageNamed:@"exercise.png"]];
 //        self.label_image.contentMode = UIViewContentModeScaleToFill;
         
@@ -278,7 +278,7 @@
     }
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
     NSLog(@"Results: %@",[dateFormatter stringFromDate:[NSDate date]]);
     
