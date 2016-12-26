@@ -102,10 +102,12 @@
     
     [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
+    [table_view_cell.yesButton.layer setBorderColor:[[UIColor colorWithRed:161.0f/255.0f green:153.0f/255.0f blue:222.0f/255.0f alpha:1.0] CGColor]];
 
     
     [table_view_cell.noButton addTarget:self action:@selector(noButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.noButton setShowsTouchWhenHighlighted:@YES];
+    [table_view_cell.noButton.layer setBorderColor:[[UIColor colorWithRed:161.0f/255.0f green:153.0f/255.0f blue:222.0f/255.0f alpha:1.0] CGColor]];
 
     
     if (indexPath != nil) {
