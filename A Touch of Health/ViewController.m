@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.contact_us_buttons addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
+    self.agree_to_policy_button = [[UIButton alloc] initWithFrame:CGRectMake(10,10,100,100)];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -28,7 +29,7 @@
 
 - (void) sendEmailTo:(NSString *)to withSubject:(NSString *)subject withBody:(NSString *)body {
     
-#define mailString @"mailto:sb@sw.com?subject=title&body=content"
+#define mailString @"mailto:contactus@premierlifeplanning.com?subject=A Touch of Health&body=Write here!"
     
     NSString *url = [mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];

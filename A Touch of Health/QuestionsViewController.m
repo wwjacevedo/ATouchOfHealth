@@ -102,11 +102,13 @@
     
     [table_view_cell.yesButton addTarget:self action:@selector(yesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.yesButton setShowsTouchWhenHighlighted:@YES];
+    table_view_cell.yesButton.tag = indexPath.row;
     [table_view_cell.yesButton.layer setBorderColor:[[UIColor colorWithRed:161.0f/255.0f green:153.0f/255.0f blue:222.0f/255.0f alpha:1.0] CGColor]];
 
     
     [table_view_cell.noButton addTarget:self action:@selector(noButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [table_view_cell.noButton setShowsTouchWhenHighlighted:@YES];
+    table_view_cell.noButton.tag = indexPath.row;
     [table_view_cell.noButton.layer setBorderColor:[[UIColor colorWithRed:161.0f/255.0f green:153.0f/255.0f blue:222.0f/255.0f alpha:1.0] CGColor]];
 
     
@@ -146,14 +148,14 @@
 
     if (button.isEnabled) {
         [self.model.answers replaceObjectAtIndex:index withObject:@"1"];
-        [self saveQuestionsState];
         [self.table_view reloadData];
 
     } else {
         [self.model.answers replaceObjectAtIndex:index withObject:@"0"];
-        [self saveQuestionsState];
         [self.table_view reloadData];
     }
+    
+    [self saveQuestionsState];
 }
 
 - (void) noButtonTapped:(UIButton *) button {
@@ -168,6 +170,8 @@
         [self.model.answers replaceObjectAtIndex:index withObject:@"1"];
         [self.table_view reloadData];
     }
+    
+    [self saveQuestionsState];
 }
 
 - (void) manageHeaderImageAndMsgRespectTo :(NSIndexPath *) indexPath {
@@ -264,10 +268,6 @@
     [self.more_buttons_view_first setHidden:YES];
     [self.table_view reloadData];
     [self.table_view flashScrollIndicators];
-    
-    NSArray *indexPathArray = [self.table_view indexPathsForVisibleRows];
-    NSIndexPath *indexPath = [indexPathArray objectAtIndex:[indexPathArray count] - 1];
-    [self.table_view scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
 }
 
 - (void) saveToResults {
@@ -320,17 +320,6 @@
     NSString *toRecipents = @"contactus@premierlifeplanning.com";
     
     [self sendEmailTo:toRecipents withSubject:emailTitle withBody:messageBody];
-    
-//    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
-//    
-//    mailComposer.mailComposeDelegate = self;
-//    
-//    [mailComposer setTitle:emailTitle];
-//    [mailComposer setSubject:messageBody];
-//    [mailComposer setToRecipients:toRecipents];
-//    
-//    // Present mail view controller on screen
-//    [self presentViewController:self animated:YES completion:NULL];
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -364,7 +353,7 @@
 //                            [to stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 //                            [subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 //                            [body stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-    #define mailString @"mailto:sb@sw.com?subject=title&body=content"
+    #define mailString @"mailto:contactus@premierlifeplanning.com?subject=A Touch of Health&body=Write here!"
     
     NSString *url = [mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];

@@ -196,6 +196,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="agree_to_policy_button" destination="TLn-aj-zoX" id="h2O-HA-2ai"/>
                         <outlet property="contact_us_buttons" destination="NXz-2o-gB0" id="fYf-Rb-xTl"/>
                     </connections>
                 </viewController>
@@ -230,6 +231,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vbX-B8-mFQ" secondAttribute="height" multiplier="49:53" id="K7P-S2-iBK"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbX-B8-mFQ">
+                                <rect key="frame" x="16" y="144" width="343" height="393"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vbX-B8-mFQ" secondAttribute="height" multiplier="343:393" id="A29-B2-ctt"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="table_view_cell" selectionStyle="none" indentationWidth="10" reuseIdentifier="table_view_cell" rowHeight="117" id="yTN-6k-yHn" customClass="CustomViewCell">
@@ -345,7 +353,7 @@
                                             <barButtonItem image="back_arrow" id="ahe-Vh-dKY">
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
-                                                    <segue destination="4sB-uL-glT" kind="show" id="XNV-s9-xAY"/>
+                                                    <segue destination="kTS-BZ-vep" kind="show" id="7o8-cE-jFT"/>
                                                 </connections>
                                             </barButtonItem>
                                         </leftBarButtonItems>
@@ -435,7 +443,7 @@
                                         <rect key="frame" x="0.0" y="1" width="375" height="66"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCd-Zf-WBD">
-                                                <rect key="frame" x="8" y="8" width="359" height="30"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="30"/>
                                                 <color key="backgroundColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="eCd-Zf-WBD" secondAttribute="height" multiplier="359:30" id="h6T-nX-80Y"/>
@@ -466,7 +474,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="eCd-Zf-WBD" firstAttribute="top" secondItem="fNl-yM-QFf" secondAttribute="top" constant="8" id="1ge-P4-5mS"/>
+                                            <constraint firstItem="eCd-Zf-WBD" firstAttribute="top" secondItem="fNl-yM-QFf" secondAttribute="top" id="1ge-P4-5mS"/>
                                             <constraint firstAttribute="trailing" secondItem="eCd-Zf-WBD" secondAttribute="trailing" constant="8" id="7BR-xC-rzn"/>
                                             <constraint firstItem="eCd-Zf-WBD" firstAttribute="leading" secondItem="fNl-yM-QFf" secondAttribute="leading" constant="8" id="9F7-CJ-Suu"/>
                                             <constraint firstAttribute="bottom" secondItem="PVC-n4-Yg1" secondAttribute="bottom" id="DcU-uF-czY"/>
@@ -882,7 +890,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uhj-Pb-giv" id="6US-Xu-2AM">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

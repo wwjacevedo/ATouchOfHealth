@@ -27,7 +27,7 @@
 
 - (void) sendEmailTo:(NSString *)to withSubject:(NSString *)subject withBody:(NSString *)body {
     
-#define mailString @"mailto:sb@sw.com?subject=title&body=content"
+#define mailString @"mailto:contactus@premierlifeplanning.com?subject=A Touch of Health&body=Write here!"
     
     NSString *url = [mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];

@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *contact_us_buttons;
+@property (strong, nonatomic) IBOutlet UIButton *agree_to_policy_button;
 
 @end
 
