@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here's the challenge: try to improve your score. You can do it! Get started now." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-BC-x0b">
-                                <rect key="frame" x="16" y="434" width="343" height="99"/>
+                                <rect key="frame" x="16" y="434.5" width="343" height="99"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0d8-BC-x0b" secondAttribute="height" multiplier="343:99" id="Bf9-4R-8ee"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnT-Vp-GSk">
-                                <rect key="frame" x="16" y="273" width="343" height="153"/>
+                                <rect key="frame" x="16" y="273.5" width="343" height="153"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NnT-Vp-GSk" secondAttribute="height" multiplier="343:153" id="gPn-46-3qp"/>
                                 </constraints>
@@ -52,8 +52,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLn-aj-zoX">
-                                <rect key="frame" x="16" y="541" width="343" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLn-aj-zoX">
+                                <rect key="frame" x="4" y="540.5" width="343" height="35"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TLn-aj-zoX" secondAttribute="height" multiplier="49:5" id="s9R-BH-rYW"/>
@@ -101,7 +101,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Touch of Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7R-oP-2r6">
-                                <rect key="frame" x="16" y="244" width="343" height="21"/>
+                                <rect key="frame" x="16" y="244.5" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h7R-oP-2r6" secondAttribute="height" multiplier="49:3" id="u7O-Se-drT"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcom to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyc-RN-IfZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyc-RN-IfZ">
                                 <rect key="frame" x="16" y="185" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Uyc-RN-IfZ" secondAttribute="height" multiplier="49:3" id="ijn-Wd-dQ9"/>
@@ -402,14 +402,21 @@
                             <view contentMode="scaleToFill" restorationIdentifier="main_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="ywX-ao-js1">
                                 <rect key="frame" x="16" y="606" width="343" height="15"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bii-aE-7Ef">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bii-aE-7Ef">
                                         <rect key="frame" x="130" y="0.0" width="83" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bii-aE-7Ef" secondAttribute="height" multiplier="83:15" id="sM0-fv-oPd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="My Score(s)">
-                                            <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="My Score(s)">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="11" name=".AppleSystemUIFontEmphasized"/>
+                                                        <font key="NSOriginalFont" size="11" name=".AppleSystemUIFontEmphasized"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <segue destination="kTS-BZ-vep" kind="show" id="w0w-9b-Q0i"/>
@@ -425,7 +432,8 @@
                                                 <fragment content="Privacy Policy">
                                                     <attributes>
                                                         <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" metaFont="smallSystem"/>
+                                                        <font key="NSFont" size="11" name=".AppleSystemUIFontEmphasized"/>
+                                                        <font key="NSOriginalFont" size="11" name=".AppleSystemUIFontEmphasized"/>
                                                         <integer key="NSUnderline" value="1"/>
                                                     </attributes>
                                                 </fragment>
@@ -479,14 +487,21 @@
                                             <constraint firstAttribute="width" secondItem="fNl-yM-QFf" secondAttribute="height" multiplier="125:22" id="gb3-Cu-2fq"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-Du-VJl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-Du-VJl">
                                         <rect key="frame" x="39" y="0.0" width="83" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gzf-Du-VJl" secondAttribute="height" multiplier="83:15" id="GrX-5C-FU2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="Contact Us">
-                                            <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Contact Us">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="11" name=".AppleSystemUIFontEmphasized"/>
+                                                        <font key="NSOriginalFont" size="11" name=".AppleSystemUIFontEmphasized"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                     </button>
                                 </subviews>
@@ -602,6 +617,9 @@
                                                 <state key="normal" title="NO THANKS TAKE ME TO MY RESULTS">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="ypC-KR-Bc5" kind="show" id="xMq-WR-izp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1355,9 +1373,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gep-sF-pfW"/>
-        <segue reference="UUO-SW-8ML"/>
+        <segue reference="dLB-6i-YeM"/>
+        <segue reference="w0w-9b-Q0i"/>
         <segue reference="92p-Y5-cAW"/>
-        <segue reference="tHg-9F-9xV"/>
-        <segue reference="T0l-8n-9uc"/>
+        <segue reference="1Lj-KM-95j"/>
     </inferredMetricsTieBreakers>
 </document>

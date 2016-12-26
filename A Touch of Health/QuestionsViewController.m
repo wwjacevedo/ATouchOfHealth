@@ -116,6 +116,7 @@
         [table_view_cell.question setText:[_model.allQuestions objectAtIndex:indexPath.row]];
         
         if ([[self.model.answers objectAtIndex:indexPath.row] isEqualToString:@"1"]) {
+            
             [table_view_cell.yesButton setEnabled:@YES];
             [table_view_cell.noButton setEnabled:@NO];
         } else {
@@ -276,14 +277,22 @@
     
     for (int index = 0; index < 15; index++) {
         if ([[self.model.answers objectAtIndex:index] isEqualToString:@"1"]) {
-            trueAnswersCount++;
+            NSLog(@"Results index 1");
+            if (!(index == 0 || index == 2 || index == 4 || index == 6 || index == 7 || index == 11)) {
+                trueAnswersCount++;
+            }
+        } else {
+            NSLog(@"Results index 0");
+            if (index == 0 || index == 2 || index == 4 || index == 6 || index == 7) {
+                trueAnswersCount++;
+            }
         }
     }
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
-    NSLog(@"Results: %@",[dateFormatter stringFromDate:[NSDate date]]);
+    NSLog(@"Results: %@ = %d",[dateFormatter stringFromDate:[NSDate date]], trueAnswersCount);
     
     NSMutableString *dateString = [[NSMutableString alloc] init];
 

@@ -46,7 +46,15 @@
         NSString *tempString = [fileContent substringWithRange:NSMakeRange(index, 1)];
         
         if ([tempString isEqualToString:@"1"]) {
-            self.results++;
+            NSLog(@"Results index 1");
+            if (!(index == 0 || index == 2 || index == 4 || index == 6 || index == 7 || index == 11)) {
+                self.results++;
+            }
+        } else {
+            NSLog(@"Results index 0");
+            if (index == 0 || index == 2 || index == 4 || index == 6 || index == 7) {
+                self.results++;
+            }
         }
     }
     
