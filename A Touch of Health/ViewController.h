@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *contact_us_buttons;
 @property (strong, nonatomic) IBOutlet UIButton *agree_to_policy_button;
+@property (weak, nonatomic) NSUserDefaults *userDefaults;
 
 @end
 

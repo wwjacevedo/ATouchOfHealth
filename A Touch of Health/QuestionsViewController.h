@@ -15,6 +15,9 @@
 
 @interface QuestionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
+- (IBAction)backButtonAction:(id)sender;
+
+@property (weak, nonatomic) NSUserDefaults *userDefaults;
 @property (strong, nonatomic) QuestionsModel* model;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *header_icon_button;

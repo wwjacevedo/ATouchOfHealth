@@ -11,6 +11,7 @@
 @interface ScoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table_view;
 @property (weak, nonatomic) IBOutlet UIButton *contact_us_button;
+- (IBAction)backButtonAction:(id)sender;
 
 @property NSMutableArray *scores;
 

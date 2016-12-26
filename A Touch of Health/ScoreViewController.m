@@ -38,7 +38,7 @@
     NSArray* allLinedStrings = [fileContent componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     self.scores = [[NSMutableArray alloc] initWithArray:allLinedStrings];
-    
+    self.scores = [[[self.scores reverseObjectEnumerator] allObjects] mutableCopy];
 }
 
 - (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
@@ -90,4 +90,8 @@
 }
 */
 
+- (IBAction)backButtonAction:(id)sender {
+    
+     [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

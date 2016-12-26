@@ -378,4 +378,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)backButtonAction:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 @end

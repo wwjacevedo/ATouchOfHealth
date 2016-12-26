@@ -10,5 +10,7 @@
 
 @interface PrivacyPolicyViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *contact_us_button;
+@property (weak, nonatomic) NSUserDefaults *userDefaults;
+- (IBAction)backButtonAction:(id)sender;
 
 @end

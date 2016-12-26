@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *msg_one;
 @property (weak, nonatomic) IBOutlet UILabel *msg_two;
 @property (weak, nonatomic) IBOutlet UIButton *contact_us_button;
+- (IBAction)backButtonAction:(id)sender;
 
 @property (strong, nonatomic) ResultsModel *model;
 @property int results;

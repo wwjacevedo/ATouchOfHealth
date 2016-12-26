@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     _userDefaults = [NSUserDefaults standardUserDefaults];
     [self.contact_us_button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
 }
@@ -54,4 +55,12 @@
 }
 */
 
+- (IBAction)backButtonAction:(id)sender {
+   
+    if (![_userDefaults objectForKey:@"agreed"]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 @end
