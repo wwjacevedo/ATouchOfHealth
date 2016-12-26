@@ -737,50 +737,23 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(c) 2016 Premier RN Geriatric Care's A Touch of Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSl-8d-g7Z">
-                                <rect key="frame" x="16" y="644" width="343" height="13"/>
+                                <rect key="frame" x="16" y="645" width="343" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMZ-wd-2tT">
-                                <rect key="frame" x="16" y="581" width="126" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RMZ-wd-2tT" secondAttribute="height" multiplier="37:10" id="003-66-sAo"/>
-                                    <constraint firstAttribute="width" secondItem="RMZ-wd-2tT" secondAttribute="height" multiplier="37:10" id="5eL-8k-kLK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Contact Us">
-                                    <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oct-hd-FC5">
-                                <rect key="frame" x="150" y="587" width="97" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oct-hd-FC5" secondAttribute="height" multiplier="52:15" id="4cP-9Q-BPu"/>
-                                    <constraint firstAttribute="width" secondItem="oct-hd-FC5" secondAttribute="height" multiplier="52:15" id="Th0-E5-uJY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="My Score(s)">
-                                    <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="kTS-BZ-vep" kind="show" id="huH-Jf-xfP">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-PU-N38">
-                                <rect key="frame" x="255" y="586" width="104" height="29"/>
+                                <rect key="frame" x="217" y="581" width="107" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="h2G-PU-N38" secondAttribute="height" multiplier="112:31" id="Bhb-TR-qCM"/>
-                                    <constraint firstAttribute="width" secondItem="h2G-PU-N38" secondAttribute="height" multiplier="112:31" id="sTT-dK-Kah"/>
+                                    <constraint firstAttribute="width" secondItem="h2G-PU-N38" secondAttribute="height" multiplier="107:34" id="7YJ-q7-0N4"/>
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Privacy Policy">
                                             <attributes>
                                                 <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                <font key="NSFont" size="14" name=".AppleSystemUIFontEmphasized"/>
+                                                <font key="NSOriginalFont" size="14" name=".AppleSystemUIFontEmphasized"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
@@ -845,33 +818,58 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zp0-mk-K71">
+                                <rect key="frame" x="165" y="581" width="44" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Zp0-mk-K71" secondAttribute="height" multiplier="22:17" id="UOL-lg-L00"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMZ-wd-2tT">
+                                <rect key="frame" x="59" y="581" width="98" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RMZ-wd-2tT" secondAttribute="height" multiplier="49:17" id="ItP-gi-xot"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Contact Us">
+                                            <attributes>
+                                                <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="13" name=".AppleSystemUIFontEmphasized"/>
+                                                <font key="NSOriginalFont" size="13" name=".AppleSystemUIFontEmphasized"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RMZ-wd-2tT" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="1br-qi-AcM"/>
-                            <constraint firstItem="oct-hd-FC5" firstAttribute="leading" secondItem="RMZ-wd-2tT" secondAttribute="trailing" constant="8" id="2Al-Qw-V0i"/>
+                            <constraint firstItem="RMZ-wd-2tT" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="55" id="0ZL-IE-r5a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h2G-PU-N38" secondAttribute="trailing" constant="35" id="2Fe-Dn-HKW"/>
                             <constraint firstItem="uxY-0i-box" firstAttribute="top" secondItem="mw8-sT-MEc" secondAttribute="bottom" constant="50" id="2Vd-vd-izh"/>
-                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="RMZ-wd-2tT" secondAttribute="bottom" constant="29" id="3JN-ZN-NqE"/>
                             <constraint firstItem="mw8-sT-MEc" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="72k-mp-Ioq"/>
+                            <constraint firstItem="RMZ-wd-2tT" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" constant="43" id="7tB-Vu-g0Y"/>
                             <constraint firstItem="lSl-8d-g7Z" firstAttribute="width" secondItem="dDb-dq-fSo" secondAttribute="height" multiplier="343:667" id="8Lc-6O-xqh"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="h2G-PU-N38" secondAttribute="bottom" constant="30" id="8Z3-qu-uDl"/>
                             <constraint firstItem="mw8-sT-MEc" firstAttribute="top" secondItem="0l8-eF-aVh" secondAttribute="bottom" constant="7" id="AhW-Oe-9if"/>
                             <constraint firstItem="KZ2-DV-rvT" firstAttribute="top" secondItem="dDb-dq-fSo" secondAttribute="top" constant="20" id="Cjf-9g-kUn"/>
                             <constraint firstItem="KZ2-DV-rvT" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leading" id="Glw-pQ-OyF"/>
+                            <constraint firstItem="h2G-PU-N38" firstAttribute="leading" secondItem="Zp0-mk-K71" secondAttribute="trailing" constant="8" id="HEm-J0-M25"/>
                             <constraint firstItem="0l8-eF-aVh" firstAttribute="top" secondItem="KZ2-DV-rvT" secondAttribute="bottom" constant="9" id="Iif-hx-28d"/>
                             <constraint firstItem="lSl-8d-g7Z" firstAttribute="centerX" secondItem="dDb-dq-fSo" secondAttribute="centerX" id="Lki-Fh-c14"/>
-                            <constraint firstItem="oct-hd-FC5" firstAttribute="leading" secondItem="RMZ-wd-2tT" secondAttribute="trailing" constant="8" id="OR5-IS-1Yg"/>
                             <constraint firstItem="mw8-sT-MEc" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="Opo-Fd-tBX"/>
-                            <constraint firstItem="RMZ-wd-2tT" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="55" id="UI7-DD-QQt"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="Zp0-mk-K71" secondAttribute="bottom" constant="30" id="POR-WR-SFt"/>
+                            <constraint firstItem="h2G-PU-N38" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="55" id="S9f-gP-Z2f"/>
                             <constraint firstItem="0l8-eF-aVh" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="Vdk-Gv-SW7"/>
+                            <constraint firstItem="Zp0-mk-K71" firstAttribute="top" secondItem="uxY-0i-box" secondAttribute="bottom" constant="55" id="anI-7H-86r"/>
                             <constraint firstItem="Ft1-pr-LDb" firstAttribute="top" secondItem="lSl-8d-g7Z" secondAttribute="bottom" constant="10" id="cQS-KQ-vWh"/>
                             <constraint firstAttribute="trailing" secondItem="KZ2-DV-rvT" secondAttribute="trailing" id="eRg-IR-Jch"/>
                             <constraint firstItem="0l8-eF-aVh" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="esL-8V-o11"/>
-                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="oct-hd-FC5" secondAttribute="bottom" constant="29" id="gy6-yJ-Fvl"/>
-                            <constraint firstItem="h2G-PU-N38" firstAttribute="leading" secondItem="oct-hd-FC5" secondAttribute="trailing" constant="8" id="kdN-yA-wln"/>
-                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="h2G-PU-N38" secondAttribute="bottom" constant="29" id="li8-1g-QFk"/>
                             <constraint firstItem="uxY-0i-box" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="t3r-OF-nYk"/>
-                            <constraint firstItem="h2G-PU-N38" firstAttribute="trailing" secondItem="dDb-dq-fSo" secondAttribute="trailingMargin" id="tBd-1m-1wb"/>
                             <constraint firstItem="0l8-eF-aVh" firstAttribute="top" secondItem="KZ2-DV-rvT" secondAttribute="bottom" constant="9" id="w2Y-5k-6WW"/>
+                            <constraint firstItem="Zp0-mk-K71" firstAttribute="leading" secondItem="RMZ-wd-2tT" secondAttribute="trailing" constant="8" id="xZs-Wm-DDj"/>
+                            <constraint firstItem="lSl-8d-g7Z" firstAttribute="top" secondItem="RMZ-wd-2tT" secondAttribute="bottom" constant="30" id="yDh-vV-UfY"/>
                             <constraint firstItem="uxY-0i-box" firstAttribute="leading" secondItem="dDb-dq-fSo" secondAttribute="leadingMargin" id="yjw-6r-iJK"/>
                         </constraints>
                     </view>
@@ -923,7 +921,8 @@
                                         <fragment content="Privacy Policy">
                                             <attributes>
                                                 <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <font key="NSFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                                <font key="NSOriginalFont" size="15" name=".AppleSystemUIFontEmphasized"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
@@ -1006,13 +1005,21 @@
                                     <constraint firstAttribute="width" secondItem="4zr-G8-iG0" secondAttribute="height" multiplier="22:15" id="Xcg-h3-fYa"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sED-tc-cf1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sED-tc-cf1">
                                 <rect key="frame" x="38" y="588" width="119" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sED-tc-cf1" secondAttribute="height" multiplier="119:30" id="n3K-rV-oN5"/>
                                 </constraints>
-                                <state key="normal" title="Contact Us">
-                                    <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Contact Us">
+                                            <attributes>
+                                                <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                                <font key="NSOriginalFont" size="15" name=".AppleSystemUIFontEmphasized"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                             </button>
                         </subviews>
@@ -1112,19 +1119,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogo-sR-vDp">
                                 <rect key="frame" x="16" y="579" width="343" height="68"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmh-hy-kAn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fmh-hy-kAn">
                                         <rect key="frame" x="8" y="8" width="112" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Fmh-hy-kAn" secondAttribute="height" multiplier="7:2" id="hm8-G6-J9x"/>
                                         </constraints>
-                                        <state key="normal" title="Contact Us">
-                                            <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Contact Us">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67a-Yc-DAh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67a-Yc-DAh">
                                         <rect key="frame" x="128" y="8" width="86" height="33"/>
-                                        <state key="normal" title="My Score(s)">
-                                            <color key="titleColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="My Score(s)">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <segue destination="kTS-BZ-vep" kind="show" id="tHg-9F-9xV"/>
@@ -1140,7 +1163,8 @@
                                                 <fragment content="Privacy Policy">
                                                     <attributes>
                                                         <color key="NSColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                        <font key="NSOriginalFont" size="12" name=".AppleSystemUIFontEmphasized"/>
                                                         <integer key="NSUnderline" value="1"/>
                                                     </attributes>
                                                 </fragment>
@@ -1333,7 +1357,7 @@
         <segue reference="gep-sF-pfW"/>
         <segue reference="UUO-SW-8ML"/>
         <segue reference="92p-Y5-cAW"/>
-        <segue reference="w0w-9b-Q0i"/>
-        <segue reference="ZPa-Ia-JYx"/>
+        <segue reference="tHg-9F-9xV"/>
+        <segue reference="T0l-8n-9uc"/>
     </inferredMetricsTieBreakers>
 </document>
