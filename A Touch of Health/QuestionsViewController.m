@@ -18,7 +18,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    
+     
     _model = [[QuestionsModel alloc] init];
     [_model initQuestionsAndAnswers];
     _table_view.delegate = self;
@@ -271,6 +271,7 @@
 }
 
 - (void) saveToResults {
+    NSLog(@"Results saved");
     int trueAnswersCount = 0;
     
     for (int index = 0; index < 15; index++) {
