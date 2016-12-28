@@ -296,12 +296,14 @@
                                     <navigationItem title="A Touch of Health" id="CwL-NB-tQc">
                                         <leftBarButtonItems>
                                             <barButtonItem image="white_icon" style="plain" id="LaN-dI-WcM">
+                                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-7" maxY="0.0"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <segue destination="4sB-uL-glT" kind="show" id="gep-sF-pfW"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem image="back_arrow" id="ahe-Vh-dKY">
+                                                <inset key="imageInsets" minX="-35" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="backButtonAction:" destination="pVf-Nt-zff" id="8sT-8b-elN"/>
@@ -740,12 +742,14 @@
                                     <navigationItem title="A Touch of Health" id="Tue-OG-bgZ">
                                         <leftBarButtonItems>
                                             <barButtonItem image="white_icon" style="plain" id="eCH-at-q0x">
+                                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-7" maxY="0.0"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <segue destination="4sB-uL-glT" kind="show" id="IAO-0c-uPK"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem image="back_arrow" id="yJP-Pn-mbi">
+                                                <inset key="imageInsets" minX="-35" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="backButtonAction:" destination="CjK-0L-a2a" id="PRR-uP-GqR"/>
@@ -950,12 +954,14 @@
                                     <navigationItem title="A Touch of Health" id="758-al-UPy">
                                         <leftBarButtonItems>
                                             <barButtonItem image="white_icon" style="plain" id="Mux-bx-fxZ">
+                                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-7" maxY="0.0"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <segue destination="4sB-uL-glT" kind="show" id="wh8-eS-upd"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem image="back_arrow" id="uyw-bU-BeR">
+                                                <inset key="imageInsets" minX="-35" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="backButtonAction:" destination="kTS-BZ-vep" id="uWz-ER-Yx9"/>
@@ -1259,12 +1265,14 @@
                                     <navigationItem title="A Touch of Health" id="XP4-3A-WBQ">
                                         <leftBarButtonItems>
                                             <barButtonItem image="white_icon" style="plain" id="CNJ-zA-TMf">
+                                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-7" maxY="0.0"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <segue destination="4sB-uL-glT" kind="show" id="Uh7-Sr-Jmt"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem image="back_arrow" id="xoB-I1-Qnu">
+                                                <inset key="imageInsets" minX="-35" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="backButtonAction:" destination="ypC-KR-Bc5" id="I2u-Ob-as4"/>
@@ -1325,9 +1333,9 @@
         <image name="white_lrg_img" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YxX-tt-p9S"/>
-        <segue reference="wh8-eS-upd"/>
-        <segue reference="tHg-9F-9xV"/>
+        <segue reference="yvh-11-GIi"/>
         <segue reference="PDU-n3-RJd"/>
+        <segue reference="tHg-9F-9xV"/>
+        <segue reference="IAO-0c-uPK"/>
     </inferredMetricsTieBreakers>
 </document>
