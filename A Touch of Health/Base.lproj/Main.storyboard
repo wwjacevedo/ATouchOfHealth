@@ -1065,7 +1065,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your time! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uu-Sh-O3C">
                                         <rect key="frame" x="8" y="8" width="327" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1147,7 +1147,7 @@
                                             <constraint firstAttribute="width" secondItem="PHm-8n-GRa" secondAttribute="height" multiplier="335:21" id="s7Y-cL-7oW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.63137254899999995" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1327,7 +1327,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="YxX-tt-p9S"/>
         <segue reference="Uh7-Sr-Jmt"/>
-        <segue reference="oaL-fd-hDb"/>
+        <segue reference="T0l-8n-9uc"/>
         <segue reference="tHg-9F-9xV"/>
     </inferredMetricsTieBreakers>
 </document>
