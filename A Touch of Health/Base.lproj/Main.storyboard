@@ -701,7 +701,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0l8-eF-aVh" secondAttribute="height" multiplier="343:79" id="iM1-vt-Gfh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -1334,8 +1334,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yvh-11-GIi"/>
-        <segue reference="PDU-n3-RJd"/>
-        <segue reference="tHg-9F-9xV"/>
+        <segue reference="ZPa-Ia-JYx"/>
         <segue reference="IAO-0c-uPK"/>
+        <segue reference="w0w-9b-Q0i"/>
     </inferredMetricsTieBreakers>
 </document>
