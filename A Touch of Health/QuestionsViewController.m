@@ -9,6 +9,7 @@
 #import "QuestionsViewController.h"
 #import "CustomViewCell.h"
 #import "QuestionsModel.h"
+#import "ResultsViewController.h"
 
 @interface QuestionsViewController ()
 
@@ -207,6 +208,7 @@
 }
 
 - (void) saveQuestionsState {
+    
     NSLog(@"saving questions answers");
     
     NSString *tempString = [[self.model.answers valueForKey:@"description"] componentsJoinedByString:@""];
@@ -215,6 +217,68 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"answers.txt"];
     [tempString writeToFile:appFile atomically:YES];
+
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch(buttonIndex) {
+        case 0: //"No" pressed
+            //do something?
+            break;
+        case 1: //"Yes" pressed
+            NSLog(@"Results saved");
+            int trueAnswersCount = 0;
+            
+            for (int index = 0; index < 15; index++) {
+                if ([[self.model.answers objectAtIndex:index] isEqualToString:@"1"]) {
+                    NSLog(@"Results index 1");
+                    if (!(index == 0 || index == 2 || index == 4 || index == 6 || index == 7 || index == 11)) {
+                        trueAnswersCount++;
+                    }
+                } else {
+                    NSLog(@"Results index 0");
+                    if (index == 0 || index == 2 || index == 4 || index == 6 || index == 7) {
+                        trueAnswersCount++;
+                    }
+                }
+            }
+            
+            NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+            // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
+            NSLog(@"Results: %@ = %d",[dateFormatter stringFromDate:[NSDate date]], trueAnswersCount);
+            
+            NSMutableString *dateString = [[NSMutableString alloc] init];
+            
+            [dateString appendString:[dateFormatter stringFromDate:[NSDate date]]];
+            [dateString appendString:@" Score = "];
+            [dateString appendString:[NSString stringWithFormat:@"%d\n", trueAnswersCount]];
+            
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+            NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"results.txt"];
+            NSError *error;
+            NSString *contents = [NSString stringWithContentsOfFile:appFile
+                                                           encoding:NSUTF8StringEncoding
+                                                              error:&error];
+            
+            if (error == nil) {
+                NSLog(@"%@", [error localizedDescription]);
+            }
+            
+            
+            if (contents == nil) {
+                [dateString writeToFile:appFile atomically:YES];
+            } else {
+                contents = [contents stringByAppendingFormat:@"%@", dateString];
+                [contents writeToFile:appFile atomically:YES encoding:NSUTF8StringEncoding error:nil];
+            }
+            ResultsViewController *resultsController = (ResultsViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsViewController"];
+            [self presentViewController:resultsController animated:YES completion:nil];
+            break;
+    }
 }
 
 - (void) readAnswersSaved {
@@ -272,53 +336,13 @@
 }
 
 - (void) saveToResults {
-    NSLog(@"Results saved");
-    int trueAnswersCount = 0;
     
-    for (int index = 0; index < 15; index++) {
-        if ([[self.model.answers objectAtIndex:index] isEqualToString:@"1"]) {
-            NSLog(@"Results index 1");
-            if (!(index == 0 || index == 2 || index == 4 || index == 6 || index == 7 || index == 11)) {
-                trueAnswersCount++;
-            }
-        } else {
-            NSLog(@"Results index 0");
-            if (index == 0 || index == 2 || index == 4 || index == 6 || index == 7) {
-                trueAnswersCount++;
-            }
-        }
-    }
-    
-    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
-    // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
-    NSLog(@"Results: %@ = %d",[dateFormatter stringFromDate:[NSDate date]], trueAnswersCount);
-    
-    NSMutableString *dateString = [[NSMutableString alloc] init];
-
-    [dateString appendString:[dateFormatter stringFromDate:[NSDate date]]];
-    [dateString appendString:@" Score = "];
-    [dateString appendString:[NSString stringWithFormat:@"%d\n", trueAnswersCount]];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"results.txt"];
-    NSError *error;
-    NSString *contents = [NSString stringWithContentsOfFile:appFile
-                                                   encoding:NSUTF8StringEncoding
-                                                      error:&error];
-    
-    if (error == nil) {
-        NSLog(@"%@", [error localizedDescription]);
-    }
-    
-    
-    if (contents == nil) {
-        [dateString writeToFile:appFile atomically:YES];
-    } else {
-        contents = [contents stringByAppendingFormat:@"%@", dateString];
-        [contents writeToFile:appFile atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Submit Answers"
+                                                    message:@"Do you want to submit your answers?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes", nil];
+    [alert show];
 }
 
 - (void) sendEmail:(id) sender {

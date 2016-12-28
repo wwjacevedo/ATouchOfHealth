@@ -572,9 +572,6 @@
                                                 <state key="normal" title="NO THANKS TAKE ME TO MY RESULTS">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="ypC-KR-Bc5" kind="show" id="xMq-WR-izp"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -606,9 +603,6 @@
                                                         <integer key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="ypC-KR-Bc5" kind="show" id="92p-Y5-cAW"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -777,7 +771,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uxY-0i-box" secondAttribute="height" multiplier="343:30" id="gb0-HJ-jNj"/>
                                 </constraints>
-                                <state key="normal" title="I agree to the Privacy Policy's">
+                                <state key="normal" title="I Agree to the Privacy Policy">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1038,7 +1032,7 @@
         <!--Results View Controller-->
         <scene sceneID="Opy-nV-9kF">
             <objects>
-                <viewController id="ypC-KR-Bc5" customClass="ResultsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewController" id="ypC-KR-Bc5" customClass="ResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A2z-XG-KRR"/>
                         <viewControllerLayoutGuide type="bottom" id="Gzu-Zl-KGN"/>
@@ -1203,17 +1197,20 @@
                                                 <attributes>
                                                     <color key="NSColor" red="0.40000000000000002" green="0.32156862749999998" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.63137254899999995" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="visit one of our company's website:">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1328,10 +1325,9 @@
         <image name="white_lrg_img" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="92p-Y5-cAW"/>
         <segue reference="yvh-11-GIi"/>
-        <segue reference="PDU-n3-RJd"/>
+        <segue reference="T0l-8n-9uc"/>
         <segue reference="tHg-9F-9xV"/>
-        <segue reference="IAO-0c-uPK"/>
+        <segue reference="Uh7-Sr-Jmt"/>
     </inferredMetricsTieBreakers>
 </document>
