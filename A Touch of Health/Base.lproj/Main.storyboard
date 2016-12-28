@@ -865,7 +865,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FCI-2m-m7v" secondAttribute="height" multiplier="343:71" id="WhF-lz-H9D"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.4431372549" green="0.33725490200000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -1326,8 +1326,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YxX-tt-p9S"/>
-        <segue reference="Uh7-Sr-Jmt"/>
-        <segue reference="T0l-8n-9uc"/>
+        <segue reference="wh8-eS-upd"/>
         <segue reference="tHg-9F-9xV"/>
+        <segue reference="PDU-n3-RJd"/>
     </inferredMetricsTieBreakers>
 </document>
