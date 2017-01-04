@@ -49,6 +49,7 @@ bool ANIMATING = NO;
     
     if (_moreQuestions) {
         _numOfQuestions = 20;
+        
     } else {
         _numOfQuestions = 15;
     }
@@ -352,6 +353,12 @@ bool ANIMATING = NO;
     [self.results_button_view setHidden:YES];
     [self.more_buttons_view_first setHidden:YES];
     [self.table_view reloadData];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:15 inSection:0];
+    [_table_view scrollToRowAtIndexPath:indexPath
+                       atScrollPosition:UITableViewScrollPositionTop
+                               animated:YES];
+    
+
     [self.table_view flashScrollIndicators];
 }
 
