@@ -42,6 +42,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *no_thanks_button;
 @property (weak, nonatomic) IBOutlet UIView *more_buttons_view_first;
 
+
 - (void) activateMoreQuestions;
 - (void) saveToResults;
 

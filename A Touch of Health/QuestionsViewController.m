@@ -17,6 +17,8 @@
 
 @implementation QuestionsViewController
 
+bool ANIMATING = NO;
+
 - (void) viewDidLoad {
     [super viewDidLoad];
      
@@ -35,12 +37,12 @@
     }
     
 //    _back_button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(back)];
-    [self.save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
-    [self.clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
-    [self.contact_us_button addTarget:self action:@selector(sendEmail:) forControlEvents:UIControlEventTouchUpInside];
-    [self.more_questions_button addTarget:self action:@selector(activateMoreQuestions) forControlEvents:UIControlEventTouchUpInside];
-    [self.my_result addTarget:self action:@selector(saveToResults) forControlEvents:UIControlEventTouchUpInside];
-    [self.no_thanks_button addTarget:self action:@selector(saveToResults) forControlEvents:UIControlEventTouchUpInside];
+    [_save_button addTarget:self action:@selector(saveQuestionsState) forControlEvents:UIControlEventTouchUpInside];
+    [_clear_button addTarget:self action:@selector(clearAnswers) forControlEvents:UIControlEventTouchUpInside];
+    [_contact_us_button addTarget:self action:@selector(sendEmail:) forControlEvents:UIControlEventTouchUpInside];
+    [_more_questions_button addTarget:self action:@selector(activateMoreQuestions) forControlEvents:UIControlEventTouchUpInside];
+    [_my_result addTarget:self action:@selector(saveToResults) forControlEvents:UIControlEventTouchUpInside];
+    [_no_thanks_button addTarget:self action:@selector(saveToResults) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -74,24 +76,44 @@
     
     CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
     
-    if(distanceFromBottom < (height + 80)) {
+    if(distanceFromBottom < (height + 90)) {
         NSLog(@"end of the table %f", height);
         
-//        [self.main_buttons setHidden:YES];
 
+        [UIView transitionWithView:self.more_buttons_view_first
+                          duration:0.4
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            self.more_buttons_view_first.alpha = 1.0;
+                        }
+                        completion:^(BOOL finished) {
+                            [self.more_buttons_view_first setHidden:NO];
+                            [self.more_questions_button setHidden:NO];
+                            [self.no_thanks_button setHidden:NO];
+
+                        }];
+        
         if (self.moreQuestions) {
-            [self.more_buttons_view_first setHidden:YES];
             [self.results_button_view setHidden:NO];
         } else {
-            [self.more_buttons_view_first setHidden:NO];
             [self.results_button_view setHidden:YES];
         }
 
-    } else {
-        
-        [self.more_buttons_view_first setHidden:YES];
-        [self.results_button_view setHidden:YES];
-//        [self.main_buttons setHidden:NO];
+    } else if (distanceFromBottom > (height + 160)) {
+
+        [UIView transitionWithView:self.more_buttons_view_first
+                          duration:0.4
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            self.more_buttons_view_first.alpha = 0;
+                        }
+                        completion:^(BOOL finished) {
+                            [self.more_buttons_view_first setHidden:YES];
+                            [self.more_questions_button setHidden:YES];
+                            [self.no_thanks_button setHidden:YES];
+                            
+                        }];
+
     }
 }
 
