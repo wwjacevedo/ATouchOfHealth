@@ -184,11 +184,10 @@
                                 <color key="textColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U68-bO-Ma3">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U68-bO-Ma3">
                                 <rect key="frame" x="16" y="150" width="327" height="363"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbX-B8-mFQ">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbX-B8-mFQ">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="294"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -284,10 +283,10 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGC-Qk-tjj">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGC-Qk-tjj">
                                         <rect key="frame" x="0.0" y="294" width="327" height="69"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCs-8X-Irm">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCs-8X-Irm">
                                                 <rect key="frame" x="0.0" y="8" width="327" height="33"/>
                                                 <color key="backgroundColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -310,7 +309,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M2-9d-lUP">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M2-9d-lUP">
                                                 <rect key="frame" x="8" y="49" width="311" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9M2-9d-lUP" secondAttribute="height" multiplier="311:20" id="U3L-p0-NZy"/>
@@ -320,10 +319,10 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="results_button_view" translatesAutoresizingMaskIntoConstraints="NO" id="aix-fv-Ozk">
+                                            <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="results_button_view" translatesAutoresizingMaskIntoConstraints="NO" id="aix-fv-Ozk">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="69"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx7-UO-o6h">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx7-UO-o6h">
                                                         <rect key="frame" x="8" y="19" width="311" height="31"/>
                                                         <color key="backgroundColor" red="0.62745098040000002" green="0.59999999999999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -365,6 +364,9 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U68-bO-Ma3" secondAttribute="height" multiplier="109:121" id="x7n-RV-5VX"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-AF-Nvu">
                                 <rect key="frame" x="16" y="66" width="343" height="76"/>
@@ -646,13 +648,17 @@
                             <constraint firstItem="ywX-ao-js1" firstAttribute="trailing" secondItem="Olg-Ug-cjl" secondAttribute="trailingMargin" id="CWr-UP-w4X"/>
                             <constraint firstItem="a9M-OY-IDh" firstAttribute="trailing" secondItem="Olg-Ug-cjl" secondAttribute="trailingMargin" id="EIo-ut-zQN"/>
                             <constraint firstItem="uKz-Nz-nE6" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leading" id="F6N-6f-KL7"/>
+                            <constraint firstItem="U68-bO-Ma3" firstAttribute="top" secondItem="Ifo-AF-Nvu" secondAttribute="bottom" constant="8" id="JRa-nT-f94"/>
                             <constraint firstAttribute="trailing" secondItem="uKz-Nz-nE6" secondAttribute="trailing" id="KGD-Vo-Z5z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U68-bO-Ma3" secondAttribute="trailing" constant="16" id="KfD-uE-zyq"/>
                             <constraint firstItem="Ifo-AF-Nvu" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leadingMargin" id="Log-Yy-bM0"/>
+                            <constraint firstItem="a9M-OY-IDh" firstAttribute="top" secondItem="U68-bO-Ma3" secondAttribute="bottom" constant="16" id="TQ1-yO-ofQ"/>
                             <constraint firstItem="Xkx-sd-JUY" firstAttribute="trailing" secondItem="Olg-Ug-cjl" secondAttribute="trailingMargin" id="Xk7-9K-X4x"/>
                             <constraint firstItem="ywX-ao-js1" firstAttribute="top" secondItem="a9M-OY-IDh" secondAttribute="bottom" constant="8" id="blU-EY-Hte"/>
                             <constraint firstItem="Ifo-AF-Nvu" firstAttribute="top" secondItem="uKz-Nz-nE6" secondAttribute="bottom" constant="2" id="cdx-1z-b6Q"/>
                             <constraint firstItem="HVr-bP-oIo" firstAttribute="top" secondItem="Xkx-sd-JUY" secondAttribute="bottom" constant="20" id="dMi-Gx-yju"/>
                             <constraint firstItem="uKz-Nz-nE6" firstAttribute="top" secondItem="WGJ-Ji-8cp" secondAttribute="bottom" id="eB3-fX-Z2Y"/>
+                            <constraint firstItem="U68-bO-Ma3" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leadingMargin" id="eH4-BL-1fI"/>
                             <constraint firstItem="Xkx-sd-JUY" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leadingMargin" id="g3Y-cm-3h2"/>
                             <constraint firstItem="Ifo-AF-Nvu" firstAttribute="trailing" secondItem="Olg-Ug-cjl" secondAttribute="trailingMargin" id="p0R-3A-AfJ"/>
                             <constraint firstItem="a9M-OY-IDh" firstAttribute="leading" secondItem="Olg-Ug-cjl" secondAttribute="leadingMargin" id="tgu-Wt-ein"/>

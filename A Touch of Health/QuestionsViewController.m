@@ -81,7 +81,7 @@ bool ANIMATING = NO;
         
 
         [UIView transitionWithView:self.more_buttons_view_first
-                          duration:0.4
+                          duration:0.8
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
                             self.more_buttons_view_first.alpha = 1.0;
@@ -90,7 +90,6 @@ bool ANIMATING = NO;
                             [self.more_buttons_view_first setHidden:NO];
                             [self.more_questions_button setHidden:NO];
                             [self.no_thanks_button setHidden:NO];
-
                         }];
         
         if (self.moreQuestions) {
@@ -102,7 +101,7 @@ bool ANIMATING = NO;
     } else if (distanceFromBottom > (height + 160)) {
 
         [UIView transitionWithView:self.more_buttons_view_first
-                          duration:0.4
+                          duration:0.8
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
                             self.more_buttons_view_first.alpha = 0;
@@ -111,7 +110,6 @@ bool ANIMATING = NO;
                             [self.more_buttons_view_first setHidden:YES];
                             [self.more_questions_button setHidden:YES];
                             [self.no_thanks_button setHidden:YES];
-                            
                         }];
 
     }
