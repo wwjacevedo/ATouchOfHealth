@@ -16,7 +16,7 @@
                        @"We noticed there are some areas where you may benefit from additional support on your journey toward health and wellness. We are here to help you!"];
     self.secondMsgs = @[@"Let us know how we can help you and/or your family members and friends by contacting us below using the Contact Us link.",
                         @"Send us an email using the Contact Us link below and we'd be happy to help you on your continued journey.",
-                        @"The first step is as easy as using the Contact Us link below"];
+                        @"The first step is as easy as using the Contact Us link below."];
 }
 
 @end
